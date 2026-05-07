@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Domaines d'intervention — Cabinet Céline GENDRE</title>
+<link rel="stylesheet" href="assets/carbon.css" />
+<style>
+  .page-hero { position:relative; background-image:url('assets/images/image-5.jpg'); background-size:cover; background-position:center top; color:#fff; min-height:320px; display:flex; align-items:center; padding:48px 0; }
+  .page-hero::before { content:''; position:absolute; inset:0; background:rgba(22,22,22,0.72); }
+  .page-hero > .cds-container { position:relative; z-index:1; }
+  @media (max-width:671px){ .page-hero{ min-height:200px; } }
+  .page-hero__title { font-family:'IBM Plex Serif', Georgia, serif; font-size:42px; line-height:1.15; font-weight:300; color:#fff; margin-bottom:8px; }
+  .page-hero__subtitle { font-size:16px; color:#a8a8a8; }
+
+  .dom-intro { padding: 64px 0 0; }
+  .dom-intro__grid { display:grid; grid-template-columns: 1fr; gap: 32px; align-items:start; }
+  @media (min-width:672px){ .dom-intro__grid { grid-template-columns: 1fr 280px; gap: 48px; } }
+  .dom-intro__lead { font-family:'IBM Plex Serif', Georgia, serif; font-size: 24px; line-height: 1.4; font-weight: 300; color: var(--text-primary); max-width: 60ch; }
+  .dom-intro__img { width: 280px; height: 280px; object-fit: cover; object-position: center; display:block; }
+  @media (max-width:671px){ .dom-intro__img { display:none; } }
+
+  .dom-section { padding: 96px 0; }
+  .dom-section--alt { background: var(--layer-01); }
+  .dom-section__head { margin-bottom: 48px; max-width: 720px; }
+  .dom-section__title { font-family:'IBM Plex Serif', Georgia, serif; font-size:32px; font-weight:300; margin-bottom: 16px; }
+
+  .dom-grid { display:grid; grid-template-columns:1fr; gap:1px; background:var(--border-subtle); }
+  @media (min-width:672px){ .dom-grid{ grid-template-columns:1fr 1fr; } }
+  @media (min-width:1056px){ .dom-grid--5 { grid-template-columns:repeat(3, 1fr); } }
+
+  .dom-tile { background: #fff; padding: 32px; display:flex; flex-direction:column; gap:16px; min-height: 240px; border: 1px solid var(--border-subtle); margin: 0; }
+  .dom-section--alt .dom-tile { background: var(--layer-01); }
+  .dom-tile__num { font-size:12px; letter-spacing:0.32px; color:var(--text-secondary); }
+  .dom-tile__title { font-family:'IBM Plex Serif', Georgia, serif; font-size:22px; font-weight:300; line-height:1.2; }
+  .dom-tile__text { font-size:14px; line-height:22px; color:var(--text-secondary); }
+
+  .dom-cta { padding: 96px 0; text-align:center; background: #161616; color:#fff; }
+  .dom-cta__title { font-family:'IBM Plex Serif', Georgia, serif; font-size:32px; font-weight:300; margin-bottom:32px; color:#fff; }
+  .dom-cta .cds-btn { margin: 0 auto; }
+</style>
+</head>
+<body>
+
+<header class="cds-header">
+  <div class="cds-header__inner">
+    <a class="cds-header__brand" href="index.html">
+      <span class="cds-header__brand-mark"></span>
+      <span>Céline GENDRE&nbsp;<span style="color:#8d8d8d;">Avocat</span></span>
+    </a>
+    <button class="cds-header__menu-toggle" data-menu-toggle aria-label="Menu" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor"><rect x="4" y="8" width="24" height="2"/><rect x="4" y="15" width="24" height="2"/><rect x="4" y="22" width="24" height="2"/></svg>
+    </button>
+    <nav class="cds-header__nav">
+      <a href="index.html">Accueil</a>
+      <a href="presentation.html">Présentation</a>
+      <a href="domaines.html" aria-current="page">Domaines</a>
+      <a href="actualites.html">Actualités</a>
+      <a href="honoraires.html">Honoraires</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="cds-header__spacer"></div>
+    <a class="cds-header__action" href="tel:+33986388353"><span style="font-variant-numeric:tabular-nums;">09 86 38 83 53</span></a>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="cds-container">
+      <h1 class="page-hero__title">Domaines d'intervention</h1>
+      <p class="page-hero__subtitle">Droit immobilier · Droit de la famille</p>
+    </div>
+  </section>
+
+  <section class="dom-intro">
+    <div class="cds-container">
+      <div class="dom-intro__grid">
+        <p class="dom-intro__lead">Le cabinet intervient principalement en droit immobilier et en droit de la famille, devant l'ensemble des juridictions, pour les particuliers comme pour les entreprises.</p>
+        <img class="dom-intro__img" src="assets/images/image-7.jpg" alt="Marteau de juge" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="dom-section" id="immobilier">
+    <div class="cds-container">
+      <header class="dom-section__head">
+        <span class="cds-eyebrow">01 / Droit immobilier</span>
+        <h2 class="dom-section__title">Construction, baux, propriété et copropriété.</h2>
+      </header>
+      <div class="dom-grid">
+        <article class="dom-tile">
+          <span class="dom-tile__num">01 · Domaine</span>
+          <h3 class="dom-tile__title">Droit de la Construction</h3>
+          <p class="dom-tile__text">Litiges nés d'une construction ou de travaux, pour particuliers et entreprises. Abandon de chantier, retards, malfaçons, désignation d'expert judiciaire, mobilisation des garanties, indemnisation.</p>
+        </article>
+        <article class="dom-tile">
+          <span class="dom-tile__num">02 · Domaine</span>
+          <h3 class="dom-tile__title">Baux d'Habitation</h3>
+          <p class="dom-tile__text">Assistance des bailleurs et locataires : litiges, loyers impayés, procédures d'expulsion en demande et en défense.</p>
+        </article>
+        <article class="dom-tile">
+          <span class="dom-tile__num">03 · Domaine</span>
+          <h3 class="dom-tile__title">Baux Commerciaux</h3>
+          <p class="dom-tile__text">Résiliation judiciaire des baux commerciaux, pour bailleurs et preneurs.</p>
+        </article>
+        <article class="dom-tile">
+          <span class="dom-tile__num">04 · Domaine</span>
+          <h3 class="dom-tile__title">Droit de Propriété</h3>
+          <p class="dom-tile__text">Troubles de voisinage, empiétement, servitudes. Litiges en copropriété : dégâts des eaux, contestation d'AG, recouvrement de charges.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="dom-section dom-section--alt" id="famille">
+    <div class="cds-container">
+      <header class="dom-section__head">
+        <span class="cds-eyebrow">02 / Droit de la famille</span>
+        <h2 class="dom-section__title">Divorce, séparation, protection et autorité parentale.</h2>
+      </header>
+      <div class="dom-grid dom-grid--5">
+        <article class="dom-tile">
+          <span class="dom-tile__num">01 · Domaine</span>
+          <h3 class="dom-tile__title">Divorce</h3>
+          <p class="dom-tile__text">4 types de divorce en France. Depuis le 01/01/2017, le divorce par consentement mutuel se conclut sans juge. Un avocat est obligatoire pour chaque époux dès le début de la procédure.</p>
+        </article>
+        <article class="dom-tile">
+          <span class="dom-tile__num">02 · Domaine</span>
+          <h3 class="dom-tile__title">Séparation hors mariage</h3>
+          <p class="dom-tile__text">Dissolution du concubinage ou du PACS sans recours obligatoire au juge. Litiges possibles sur les biens, le logement et les enfants.</p>
+        </article>
+        <article class="dom-tile">
+          <span class="dom-tile__num">03 · Domaine</span>
+          <h3 class="dom-tile__title">Violences conjugales</h3>
+          <p class="dom-tile__text">Ordonnance de protection : interdiction de contact, attribution du logement, autorité parentale. Dispositif téléphone Grave Danger disponible.</p>
+        </article>
+        <article class="dom-tile">
+          <span class="dom-tile__num">04 · Domaine</span>
+          <h3 class="dom-tile__title">Assistance éducative</h3>
+          <p class="dom-tile__text">Intervention devant le Juge des Enfants lorsque la santé, la sécurité ou la moralité d'un mineur est en danger.</p>
+        </article>
+        <article class="dom-tile">
+          <span class="dom-tile__num">05 · Domaine</span>
+          <h3 class="dom-tile__title">Avocat d'enfant</h3>
+          <p class="dom-tile__text">Représentation des enfants lors des auditions devant le Juge aux Affaires Familiales.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="dom-cta">
+    <div class="cds-container">
+      <h2 class="dom-cta__title">Une question, une situation à analyser ?</h2>
+      <a class="cds-btn cds-btn--primary" href="contact.html" style="margin:0 auto;">
+        Prendre contact
+        <svg class="cds-btn__icon" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="cds-footer">
+  <div class="cds-container">
+    <div class="cds-footer__grid">
+      <div class="cds-footer__col">
+        <h4>Cabinet</h4>
+        <div class="cds-footer__brand-name">Céline GENDRE</div>
+        <p class="cds-footer__tagline">Avocate au Barreau de Grenoble. Droit immobilier et droit de la famille.</p>
+      </div>
+      <div class="cds-footer__col">
+        <h4>Coordonnées</h4>
+        <ul>
+          <li>SCM Porte de France</li>
+          <li>5, place Hubert Dubedout — 38000 Grenoble</li>
+          <li><a href="tel:+33986388353">09 86 38 83 53</a></li>
+          <li><a href="mailto:cabinet@gendre-avocat.fr">cabinet@gendre-avocat.fr</a></li>
+        </ul>
+      </div>
+      <div class="cds-footer__col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="presentation.html">Présentation</a></li>
+          <li><a href="domaines.html">Domaines</a></li>
+          <li><a href="actualites.html">Actualités</a></li>
+          <li><a href="honoraires.html">Honoraires</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="cds-footer__bottom">
+      <span>© 2026 Céline GENDRE — Avocat · Barreau de Grenoble · Mentions légales</span>
+      <span>Les correspondances sont protégées par le secret professionnel.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
