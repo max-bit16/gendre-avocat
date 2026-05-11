@@ -4,48 +4,53 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Domaines d'intervention — Cabinet Céline GENDRE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Serif:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="assets/carbon.css" />
 <style>
-  .page-hero { position:relative; background-image:url('assets/images/image-5.jpg'); background-size:cover; background-position:center top; color:#fff; min-height:320px; display:flex; align-items:center; padding:48px 0; }
-  .page-hero::before { content:''; position:absolute; inset:0; background:rgba(22,22,22,0.72); }
+  .page-hero { position:relative; background-image:url('assets/images/image-5.jpg'); background-size:cover; background-position:center top; color:var(--text-on-color); min-height:320px; display:flex; align-items:center; padding:var(--sp-09) 0; }
+  .page-hero::before { content:''; position:absolute; inset:0; background:rgba(22,22,22,0.72); /* overlay — pas de token disponible */ }
   .page-hero > .cds-container { position:relative; z-index:1; }
   @media (max-width:671px){ .page-hero{ min-height:200px; } }
-  .page-hero__title { font-family:'IBM Plex Serif', Georgia, serif; font-size:42px; line-height:1.15; font-weight:300; color:#fff; margin-bottom:8px; }
-  .page-hero__subtitle { font-size:16px; color:#a8a8a8; }
+  .page-hero__title { font-family:'IBM Plex Serif', Georgia, serif; font-size: clamp(28px, 5vw, 42px); line-height:1.15; font-weight:300; color:var(--text-on-color); margin-bottom:var(--sp-03); }
+  .page-hero__subtitle { font-size:16px; color:var(--text-placeholder); }
 
-  .dom-intro { padding: 64px 0 0; }
-  .dom-intro__grid { display:grid; grid-template-columns: 1fr; gap: 32px; align-items:start; }
-  @media (min-width:672px){ .dom-intro__grid { grid-template-columns: 1fr 280px; gap: 48px; } }
+  .dom-intro { padding: var(--sp-10) 0 0; }
+  .dom-intro__grid { display:grid; grid-template-columns: 1fr; gap: var(--sp-07); align-items:start; }
+  @media (min-width:672px){ .dom-intro__grid { grid-template-columns: 1fr 280px; gap: var(--sp-09); } }
   .dom-intro__lead { font-family:'IBM Plex Serif', Georgia, serif; font-size: 24px; line-height: 1.4; font-weight: 300; color: var(--text-primary); max-width: 60ch; }
   .dom-intro__img { width: 280px; height: 280px; object-fit: cover; object-position: center; display:block; }
   @media (max-width:671px){ .dom-intro__img { display:none; } }
 
-  .dom-section { padding: 96px 0; }
+  .dom-section { padding: var(--sp-12) 0; }
   .dom-section--alt { background: var(--layer-01); }
-  .dom-section__head { margin-bottom: 48px; max-width: 720px; }
-  .dom-section__title { font-family:'IBM Plex Serif', Georgia, serif; font-size:32px; font-weight:300; margin-bottom: 16px; }
+  .dom-section__head { margin-bottom: var(--sp-09); max-width: 720px; }
+  .dom-section__title { font-family:'IBM Plex Serif', Georgia, serif; font-size:32px; font-weight:300; margin-bottom: var(--sp-05); }
 
   .dom-grid { display:grid; grid-template-columns:1fr; gap:1px; background:var(--border-subtle); }
   @media (min-width:672px){ .dom-grid{ grid-template-columns:1fr 1fr; } }
   @media (min-width:1056px){ .dom-grid--5 { grid-template-columns:repeat(3, 1fr); } }
 
-  .dom-tile { background: #fff; padding: 32px; display:flex; flex-direction:column; gap:16px; min-height: 240px; border: 1px solid var(--border-subtle); margin: 0; }
+  .dom-tile { background: var(--layer-02); padding: var(--sp-07); display:flex; flex-direction:column; gap:var(--sp-05); min-height: 240px; border: 1px solid var(--border-subtle); margin: 0; }
   .dom-section--alt .dom-tile { background: var(--layer-01); }
   .dom-tile__num { font-size:12px; letter-spacing:0.32px; color:var(--text-secondary); }
   .dom-tile__title { font-family:'IBM Plex Serif', Georgia, serif; font-size:22px; font-weight:300; line-height:1.2; }
   .dom-tile__text { font-size:14px; line-height:22px; color:var(--text-secondary); }
 
-  .dom-cta { padding: 96px 0; text-align:center; background: #161616; color:#fff; }
-  .dom-cta__title { font-family:'IBM Plex Serif', Georgia, serif; font-size:32px; font-weight:300; margin-bottom:32px; color:#fff; }
+  .dom-cta { padding: var(--sp-12) 0; text-align:center; background: var(--header-bg); color:var(--text-on-color); }
+  .dom-cta__title { font-family:'IBM Plex Serif', Georgia, serif; font-size:32px; font-weight:300; margin-bottom:var(--sp-07); color:var(--text-on-color); }
   .dom-cta .cds-btn { margin: 0 auto; }
 </style>
 </head>
 <body>
 
+<a href="#main-content" class="sr-only focusable">Aller au contenu principal</a>
+
 <header class="cds-header">
   <div class="cds-header__inner">
     <a class="cds-header__brand" href="index.html">
-      <span class="cds-header__brand-mark"></span>
+      <span class="cds-header__brand-mark" aria-hidden="true"></span>
       <span>Céline GENDRE&nbsp;<span style="color:#8d8d8d;">Avocat</span></span>
     </a>
     <button class="cds-header__menu-toggle" data-menu-toggle aria-label="Menu" aria-expanded="false">
@@ -64,7 +69,7 @@
   </div>
 </header>
 
-<main>
+<main id="main-content">
 
   <section class="page-hero">
     <div class="cds-container">
@@ -77,7 +82,7 @@
     <div class="cds-container">
       <div class="dom-intro__grid">
         <p class="dom-intro__lead">Le cabinet intervient principalement en droit immobilier et en droit de la famille, devant l'ensemble des juridictions, pour les particuliers comme pour les entreprises.</p>
-        <img class="dom-intro__img" src="assets/images/image-7.jpg" alt="Marteau de juge" loading="lazy" />
+        <img class="dom-intro__img" src="assets/images/image-7.jpg" alt="Marteau de juge" width="280" height="280" loading="lazy" />
       </div>
     </div>
   </section>
@@ -180,14 +185,16 @@
       </div>
       <div class="cds-footer__col">
         <h4>Navigation</h4>
-        <ul>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="presentation.html">Présentation</a></li>
-          <li><a href="domaines.html">Domaines</a></li>
-          <li><a href="actualites.html">Actualités</a></li>
-          <li><a href="honoraires.html">Honoraires</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <nav aria-label="Navigation secondaire">
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="presentation.html">Présentation</a></li>
+            <li><a href="domaines.html">Domaines</a></li>
+            <li><a href="actualites.html">Actualités</a></li>
+            <li><a href="honoraires.html">Honoraires</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
       </div>
     </div>
     <div class="cds-footer__bottom">
