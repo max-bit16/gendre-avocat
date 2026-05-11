@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cabinet Céline GENDRE — Avocate à Grenoble</title>
+<meta name="description" content="Cabinet d'avocat à Grenoble spécialisé en droit immobilier et droit de la famille. Céline GENDRE, avocate au Barreau de Grenoble." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Serif:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/carbon.css" />
+<style>
+  /* ---- Hero pleine page ---- */
+  .hero {
+    position: relative;
+    min-height: 560px;
+    display: flex;
+    align-items: flex-end;
+    background-image: url('assets/images/tingey-injury-law-firm-veNb0DDegzE-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: var(--sp-12) 0;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(22,22,22,0.88) 40%, rgba(22,22,22,0.30) 100%);
+  }
+  .hero > .cds-container { position: relative; z-index: 1; }
+  @media (max-width: 671px) { .hero { min-height: 360px; } }
+
+  .hero__eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #a8a8a8;
+    margin-bottom: var(--sp-05);
+    display: flex;
+    align-items: center;
+    gap: var(--sp-03);
+  }
+  .hero__eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: #0f62fe; }
+  .hero__title {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 300;
+    line-height: 1.1;
+    color: #ffffff;
+    max-width: 720px;
+    margin-bottom: var(--sp-06);
+  }
+  .hero__subtitle {
+    font-size: 16px;
+    color: #a8a8a8;
+    max-width: 480px;
+    margin-bottom: var(--sp-09);
+    line-height: 1.6;
+  }
+  .hero__actions { display: flex; flex-wrap: wrap; gap: var(--sp-04); }
+
+  /* ---- Section Domaines ---- */
+  .home-domains { padding: var(--sp-12) 0; }
+  .home-domains__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--sp-05);
+  }
+  @media (min-width: 672px) {
+    .home-domains__grid { grid-template-columns: 1fr 1fr; gap: var(--sp-07); }
+  }
+
+  .domain-card {
+    background: var(--layer-01);
+    border: 1px solid var(--border-subtle);
+    padding: var(--sp-09);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-05);
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: background-color 110ms cubic-bezier(0.2,0,.38,.9);
+  }
+  .domain-card:hover { background: var(--layer-hover-01); color: var(--text-primary); text-decoration: none; }
+  .domain-card__num { font-size: 12px; letter-spacing: 0.32px; color: var(--text-secondary); }
+  .domain-card__title {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 1.2;
+  }
+  .domain-card__body { font-size: 14px; line-height: 22px; color: var(--text-secondary); flex: 1; }
+  .domain-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-03);
+    font-size: 14px;
+    color: var(--interactive);
+    margin-top: auto;
+  }
+  .domain-card__link svg { transition: transform 110ms cubic-bezier(0.2,0,.38,.9); }
+  .domain-card:hover .domain-card__link svg { transform: translateX(4px); }
+
+  /* ---- Section Approche ---- */
+  .home-approche {
+    background: var(--header-bg);
+    color: var(--text-on-color);
+    padding: var(--sp-12) 0;
+  }
+  .home-approche__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--sp-09);
+    align-items: center;
+  }
+  @media (min-width: 1056px) {
+    .home-approche__grid { grid-template-columns: 1fr 1fr; }
+  }
+  .home-approche__title {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--text-on-color);
+    margin-bottom: var(--sp-06);
+  }
+  .home-approche__body { font-size: 16px; line-height: 1.75; color: #c6c6c6; margin-bottom: var(--sp-07); }
+  .home-approche__img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ---- Chiffres ---- */
+  .home-stats { padding: var(--sp-12) 0; background: var(--layer-01); }
+  .home-stats__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border-subtle);
+  }
+  @media (min-width: 672px) {
+    .home-stats__grid { grid-template-columns: repeat(4, 1fr); }
+  }
+  .stat-cell {
+    background: var(--layer-01);
+    padding: var(--sp-09) var(--sp-07);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-03);
+  }
+  .stat-cell__num {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: 42px;
+    font-weight: 300;
+    color: var(--text-primary);
+    line-height: 1;
+  }
+  .stat-cell__label { font-size: 13px; color: var(--text-secondary); line-height: 1.4; }
+
+  /* ---- CTA ---- */
+  .home-cta { padding: var(--sp-12) 0; text-align: center; }
+  .home-cta__title {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 300;
+    margin-bottom: var(--sp-06);
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="sr-only focusable">Aller au contenu principal</a>
+
+<header class="cds-header">
+  <div class="cds-header__inner">
+    <a class="cds-header__brand" href="index.html">
+      <span class="cds-header__brand-mark" aria-hidden="true"></span>
+      <span>Céline GENDRE&nbsp;<span style="color:#8d8d8d;">Avocat</span></span>
+    </a>
+    <button class="cds-header__menu-toggle" data-menu-toggle aria-label="Menu" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor"><rect x="4" y="8" width="24" height="2"/><rect x="4" y="15" width="24" height="2"/><rect x="4" y="22" width="24" height="2"/></svg>
+    </button>
+    <nav class="cds-header__nav">
+      <a href="index.html" aria-current="page">Accueil</a>
+      <a href="presentation.html">Présentation</a>
+      <a href="domaines.html">Domaines</a>
+      <a href="actualites.html">Actualités</a>
+      <a href="honoraires.html">Honoraires</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="cds-header__spacer"></div>
+    <a class="cds-header__action" href="tel:+33986388353"><span style="font-variant-numeric:tabular-nums;">09 86 38 83 53</span></a>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <section class="hero">
+    <div class="cds-container">
+      <p class="hero__eyebrow">Avocat au Barreau de Grenoble</p>
+      <h1 class="hero__title">Défendre vos droits avec rigueur et engagement.</h1>
+      <p class="hero__subtitle">Le Cabinet Céline GENDRE intervient en droit immobilier et en droit de la famille, devant toutes les juridictions de la région grenobloise.</p>
+      <div class="hero__actions">
+        <a class="cds-btn cds-btn--primary" href="contact.html">
+          Prendre rendez-vous
+          <svg class="cds-btn__icon" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
+        </a>
+        <a class="cds-btn cds-btn--secondary" href="domaines.html">
+          Nos domaines
+          <svg class="cds-btn__icon" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-domains">
+    <div class="cds-container">
+      <span class="cds-eyebrow">Domaines d'intervention</span>
+      <div class="home-domains__grid">
+        <a class="domain-card" href="domaines.html#immobilier">
+          <span class="domain-card__num">01</span>
+          <h2 class="domain-card__title">Droit immobilier</h2>
+          <p class="domain-card__body">Construction, baux d'habitation et commerciaux, droit de propriété, copropriété. Assistance des particuliers et professionnels en litige ou en conseil.</p>
+          <span class="domain-card__link">
+            Explorer
+            <svg width="16" height="16" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
+          </span>
+        </a>
+        <a class="domain-card" href="domaines.html#famille">
+          <span class="domain-card__num">02</span>
+          <h2 class="domain-card__title">Droit de la famille</h2>
+          <p class="domain-card__body">Divorce, séparation, autorité parentale, violences conjugales, assistance éducative et représentation des enfants.</p>
+          <span class="domain-card__link">
+            Explorer
+            <svg width="16" height="16" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-approche">
+    <div class="cds-container">
+      <div class="home-approche__grid">
+        <div>
+          <span class="cds-eyebrow" style="color:#a8a8a8; border-color:#525252;">À votre écoute</span>
+          <h2 class="home-approche__title">Une approche humaine du droit, au service de votre situation.</h2>
+          <p class="home-approche__body">Chaque dossier est unique. Le cabinet vous accompagne de façon personnalisée, de la première consultation à la résolution de votre affaire, avec transparence sur les honoraires et les stratégies envisageables.</p>
+          <a class="cds-btn cds-btn--primary" href="presentation.html">
+            Le cabinet
+            <svg class="cds-btn__icon" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
+          </a>
+        </div>
+        <img class="home-approche__img" src="assets/images/yume-photography-PbN_Gl_ZoMk-unsplash.jpg" alt="Cabinet d'avocat" width="640" height="480" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="home-stats" aria-label="Le cabinet en chiffres">
+    <div class="cds-container">
+      <div class="home-stats__grid">
+        <div class="stat-cell">
+          <span class="stat-cell__num">10+</span>
+          <span class="stat-cell__label">Années d'expérience au Barreau de Grenoble</span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-cell__num">2</span>
+          <span class="stat-cell__label">Domaines d'expertise principaux</span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-cell__num">100%</span>
+          <span class="stat-cell__label">Transparence sur les honoraires</span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-cell__num">AJ</span>
+          <span class="stat-cell__label">Aide juridictionnelle acceptée</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-cta">
+    <div class="cds-container">
+      <h2 class="home-cta__title">Une situation à analyser ? Prenez contact.</h2>
+      <a class="cds-btn cds-btn--primary" href="contact.html" style="margin:0 auto;">
+        Nous contacter
+        <svg class="cds-btn__icon" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="cds-footer">
+  <div class="cds-container">
+    <div class="cds-footer__grid">
+      <div class="cds-footer__col">
+        <h4>Cabinet</h4>
+        <div class="cds-footer__brand-name">Céline GENDRE</div>
+        <p class="cds-footer__tagline">Avocate au Barreau de Grenoble. Droit immobilier et droit de la famille.</p>
+      </div>
+      <div class="cds-footer__col">
+        <h4>Coordonnées</h4>
+        <ul>
+          <li>SCM Porte de France</li>
+          <li>5, place Hubert Dubedout — 38000 Grenoble</li>
+          <li><a href="tel:+33986388353">09 86 38 83 53</a></li>
+          <li><a href="mailto:cabinet@gendre-avocat.fr">cabinet@gendre-avocat.fr</a></li>
+        </ul>
+      </div>
+      <div class="cds-footer__col">
+        <h4>Navigation</h4>
+        <nav aria-label="Navigation secondaire">
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="presentation.html">Présentation</a></li>
+            <li><a href="domaines.html">Domaines</a></li>
+            <li><a href="actualites.html">Actualités</a></li>
+            <li><a href="honoraires.html">Honoraires</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="cds-footer__bottom">
+      <span>© 2026 Céline GENDRE — Avocat · Barreau de Grenoble · <a href="mentions-legales.html">Mentions légales</a></span>
+      <span>Les correspondances sont protégées par le secret professionnel.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

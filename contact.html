@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact — Cabinet Céline GENDRE</title>
+<meta name="description" content="Contactez le Cabinet Céline GENDRE à Grenoble. Formulaire en ligne, téléphone, adresse." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Serif:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/carbon.css" />
+<style>
+  .page-hero { position:relative; background-image:url('assets/images/image-3.jpg'); background-size:cover; background-position:center; color:var(--text-on-color); min-height:260px; display:flex; align-items:center; padding:var(--sp-09) 0; }
+  .page-hero::before { content:''; position:absolute; inset:0; background:rgba(22,22,22,0.72); /* overlay — pas de token disponible */ }
+  .page-hero > .cds-container { position:relative; z-index:1; }
+  @media (max-width:671px){ .page-hero { min-height:180px; } }
+  .page-hero__title { font-family:'IBM Plex Serif', Georgia, serif; font-size: clamp(28px, 5vw, 42px); line-height:1.15; font-weight:300; color:var(--text-on-color); margin-bottom:var(--sp-03); }
+  .page-hero__subtitle { font-size:16px; color:var(--text-placeholder); }
+
+  /* ---- Layout contact ---- */
+  .contact-section { padding: var(--sp-12) 0; }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--sp-09);
+    align-items: start;
+  }
+  @media (min-width: 1056px) {
+    .contact-grid { grid-template-columns: 1fr 380px; }
+  }
+
+  /* ---- Formulaire ---- */
+  .contact-form__title {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: 28px;
+    font-weight: 300;
+    margin-bottom: var(--sp-07);
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--sp-05);
+  }
+  @media (min-width: 672px) { .form-row { grid-template-columns: 1fr 1fr; } }
+
+  [data-form-status] {
+    min-height: 20px;
+    font-size: 14px;
+    margin-top: var(--sp-04);
+  }
+
+  /* ---- Infos cabinet ---- */
+  .contact-info {
+    background: var(--layer-01);
+    padding: var(--sp-07);
+    border: 1px solid var(--border-subtle);
+  }
+  .contact-info__title {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: var(--sp-06);
+    color: var(--text-primary);
+  }
+  .contact-info__block { margin-bottom: var(--sp-07); }
+  .contact-info__label {
+    font-size: 11px;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: var(--sp-03);
+    font-weight: 500;
+  }
+  .contact-info__value { font-size: 15px; line-height: 1.6; color: var(--text-primary); }
+  .contact-info__value a { color: var(--interactive); }
+  .contact-info__value a:hover { color: var(--interactive-hover); }
+
+  .contact-info__notice {
+    border-top: 1px solid var(--border-subtle);
+    padding-top: var(--sp-06);
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  /* ---- Horaires ---- */
+  .horaires-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-03) var(--sp-05);
+    font-size: 13px;
+  }
+  .horaires-grid dt { color: var(--text-secondary); }
+  .horaires-grid dd { margin: 0; color: var(--text-primary); }
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="sr-only focusable">Aller au contenu principal</a>
+
+<header class="cds-header">
+  <div class="cds-header__inner">
+    <a class="cds-header__brand" href="index.html">
+      <span class="cds-header__brand-mark" aria-hidden="true"></span>
+      <span>Céline GENDRE&nbsp;<span style="color:#8d8d8d;">Avocat</span></span>
+    </a>
+    <button class="cds-header__menu-toggle" data-menu-toggle aria-label="Menu" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor"><rect x="4" y="8" width="24" height="2"/><rect x="4" y="15" width="24" height="2"/><rect x="4" y="22" width="24" height="2"/></svg>
+    </button>
+    <nav class="cds-header__nav">
+      <a href="index.html">Accueil</a>
+      <a href="presentation.html">Présentation</a>
+      <a href="domaines.html">Domaines</a>
+      <a href="actualites.html">Actualités</a>
+      <a href="honoraires.html">Honoraires</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+    <div class="cds-header__spacer"></div>
+    <a class="cds-header__action" href="tel:+33986388353"><span style="font-variant-numeric:tabular-nums;">09 86 38 83 53</span></a>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <section class="page-hero">
+    <div class="cds-container">
+      <h1 class="page-hero__title">Nous contacter</h1>
+      <p class="page-hero__subtitle">Première consultation — prise de rendez-vous</p>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="cds-container">
+      <div class="contact-grid">
+
+        <div>
+          <h2 class="contact-form__title">Envoyer un message</h2>
+          <form data-cds-form novalidate>
+            <div class="form-row">
+              <div class="cds-field">
+                <label class="cds-field__label" for="nom">Nom *</label>
+                <input class="cds-input" id="nom" name="nom" type="text" placeholder="Dupont" required aria-required="true" />
+              </div>
+              <div class="cds-field">
+                <label class="cds-field__label" for="prenom">Prénom *</label>
+                <input class="cds-input" id="prenom" name="prenom" type="text" placeholder="Marie" required aria-required="true" />
+              </div>
+            </div>
+            <div class="cds-field">
+              <label class="cds-field__label" for="email">Email *</label>
+              <input class="cds-input" id="email" name="email" type="email" placeholder="marie.dupont@exemple.fr" required aria-required="true" />
+            </div>
+            <div class="cds-field">
+              <label class="cds-field__label" for="telephone">Téléphone</label>
+              <input class="cds-input" id="telephone" name="telephone" type="tel" placeholder="06 00 00 00 00" />
+            </div>
+            <div class="cds-field">
+              <label class="cds-field__label" for="objet">Objet de la demande</label>
+              <input class="cds-input" id="objet" name="objet" type="text" placeholder="Droit immobilier · Droit de la famille…" />
+            </div>
+            <div class="cds-field">
+              <label class="cds-field__label" for="message">Message *</label>
+              <textarea class="cds-textarea" id="message" name="message" placeholder="Décrivez brièvement votre situation…" required aria-required="true"></textarea>
+            </div>
+            <p style="font-size:12px; color:var(--text-secondary); margin-bottom:var(--sp-06);">Les champs marqués d'un * sont obligatoires. Vos données sont traitées conformément à notre <a href="mentions-legales.html">politique de confidentialité</a>.</p>
+            <button class="cds-btn cds-btn--primary" type="submit">
+              Envoyer le message
+              <svg class="cds-btn__icon" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
+            </button>
+            <p data-form-status role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <aside class="contact-info" aria-label="Coordonnées du cabinet">
+          <h2 class="contact-info__title">Coordonnées</h2>
+
+          <div class="contact-info__block">
+            <p class="contact-info__label">Adresse</p>
+            <p class="contact-info__value">
+              SCM Porte de France<br>
+              5, place Hubert Dubedout<br>
+              38000 Grenoble
+            </p>
+          </div>
+
+          <div class="contact-info__block">
+            <p class="contact-info__label">Téléphone</p>
+            <p class="contact-info__value">
+              <a href="tel:+33986388353">09 86 38 83 53</a>
+            </p>
+          </div>
+
+          <div class="contact-info__block">
+            <p class="contact-info__label">Email</p>
+            <p class="contact-info__value">
+              <a href="mailto:cabinet@gendre-avocat.fr">cabinet@gendre-avocat.fr</a>
+            </p>
+          </div>
+
+          <div class="contact-info__block">
+            <p class="contact-info__label">Horaires d'ouverture</p>
+            <dl class="horaires-grid">
+              <dt>Lundi – vendredi</dt>
+              <dd>9h – 12h · 14h – 18h</dd>
+              <dt>Samedi</dt>
+              <dd>Sur rendez-vous</dd>
+            </dl>
+          </div>
+
+          <div class="contact-info__notice">
+            <strong>Secret professionnel</strong><br>
+            Toutes vos correspondances avec le cabinet sont couvertes par le secret professionnel de l'avocat.
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="cds-footer">
+  <div class="cds-container">
+    <div class="cds-footer__grid">
+      <div class="cds-footer__col">
+        <h4>Cabinet</h4>
+        <div class="cds-footer__brand-name">Céline GENDRE</div>
+        <p class="cds-footer__tagline">Avocate au Barreau de Grenoble. Droit immobilier et droit de la famille.</p>
+      </div>
+      <div class="cds-footer__col">
+        <h4>Coordonnées</h4>
+        <ul>
+          <li>SCM Porte de France</li>
+          <li>5, place Hubert Dubedout — 38000 Grenoble</li>
+          <li><a href="tel:+33986388353">09 86 38 83 53</a></li>
+          <li><a href="mailto:cabinet@gendre-avocat.fr">cabinet@gendre-avocat.fr</a></li>
+        </ul>
+      </div>
+      <div class="cds-footer__col">
+        <h4>Navigation</h4>
+        <nav aria-label="Navigation secondaire">
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="presentation.html">Présentation</a></li>
+            <li><a href="domaines.html">Domaines</a></li>
+            <li><a href="actualites.html">Actualités</a></li>
+            <li><a href="honoraires.html">Honoraires</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="cds-footer__bottom">
+      <span>© 2026 Céline GENDRE — Avocat · Barreau de Grenoble · <a href="mentions-legales.html">Mentions légales</a></span>
+      <span>Les correspondances sont protégées par le secret professionnel.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

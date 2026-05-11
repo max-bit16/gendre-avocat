@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Actualités — Cabinet Céline GENDRE</title>
+<meta name="description" content="Actualités juridiques du Cabinet Céline GENDRE : droit immobilier, droit de la famille, évolutions législatives." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Serif:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/carbon.css" />
+<style>
+  .page-hero { position:relative; background-image:url('assets/images/image-4.jpg'); background-size:cover; background-position:center; color:var(--text-on-color); min-height:320px; display:flex; align-items:center; padding:var(--sp-09) 0; }
+  .page-hero::before { content:''; position:absolute; inset:0; background:rgba(22,22,22,0.72); /* overlay — pas de token disponible */ }
+  .page-hero > .cds-container { position:relative; z-index:1; }
+  @media (max-width:671px){ .page-hero { min-height:200px; } }
+  .page-hero__title { font-family:'IBM Plex Serif', Georgia, serif; font-size: clamp(28px, 5vw, 42px); line-height:1.15; font-weight:300; color:var(--text-on-color); margin-bottom:var(--sp-03); }
+  .page-hero__subtitle { font-size:16px; color:var(--text-placeholder); }
+
+  /* ---- Liste articles ---- */
+  .actu-section { padding: var(--sp-12) 0; }
+
+  .actu-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--sp-05);
+  }
+  @media (min-width: 672px) { .actu-grid { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1056px) { .actu-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .actu-card {
+    background: var(--layer-01);
+    border: 1px solid var(--border-subtle);
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: background-color 110ms cubic-bezier(0.2,0,.38,.9);
+  }
+  .actu-card:hover { background: var(--layer-hover-01); color: var(--text-primary); text-decoration: none; }
+
+  .actu-card__img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    display: block;
+  }
+  .actu-card__body { padding: var(--sp-07); display: flex; flex-direction: column; flex: 1; gap: var(--sp-04); }
+  .actu-card__meta {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-05);
+    font-size: 12px;
+    color: var(--text-secondary);
+    letter-spacing: 0.32px;
+  }
+  .actu-card__tag {
+    display: inline-block;
+    padding: 2px var(--sp-03);
+    background: var(--layer-selected-01);
+    font-size: 11px;
+    letter-spacing: 0.32px;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+  .actu-card__title {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.3;
+    color: var(--text-primary);
+  }
+  .actu-card__excerpt {
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--text-secondary);
+    flex: 1;
+  }
+  .actu-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-03);
+    font-size: 14px;
+    color: var(--interactive);
+    margin-top: auto;
+  }
+  .actu-card__link svg { transition: transform 110ms cubic-bezier(0.2,0,.38,.9); }
+  .actu-card:hover .actu-card__link svg { transform: translateX(4px); }
+
+  /* ---- Article vedette ---- */
+  .actu-featured {
+    background: var(--header-bg);
+    color: var(--text-on-color);
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: var(--sp-09);
+  }
+  @media (min-width: 1056px) {
+    .actu-featured { grid-template-columns: 1fr 1fr; }
+  }
+  .actu-featured__img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+  .actu-featured__body {
+    padding: var(--sp-09);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-05);
+    justify-content: center;
+  }
+  .actu-featured__tag {
+    display: inline-block;
+    padding: 2px var(--sp-03);
+    background: var(--interactive);
+    font-size: 11px;
+    letter-spacing: 0.32px;
+    color: var(--text-on-color);
+    font-weight: 500;
+    width: fit-content;
+  }
+  .actu-featured__title {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: clamp(22px, 3vw, 32px);
+    font-weight: 300;
+    line-height: 1.3;
+    color: var(--text-on-color);
+  }
+  .actu-featured__excerpt { font-size: 15px; line-height: 1.7; color: #c6c6c6; }
+  .actu-featured__meta { font-size: 12px; color: #8d8d8d; }
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="sr-only focusable">Aller au contenu principal</a>
+
+<header class="cds-header">
+  <div class="cds-header__inner">
+    <a class="cds-header__brand" href="index.html">
+      <span class="cds-header__brand-mark" aria-hidden="true"></span>
+      <span>Céline GENDRE&nbsp;<span style="color:#8d8d8d;">Avocat</span></span>
+    </a>
+    <button class="cds-header__menu-toggle" data-menu-toggle aria-label="Menu" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor"><rect x="4" y="8" width="24" height="2"/><rect x="4" y="15" width="24" height="2"/><rect x="4" y="22" width="24" height="2"/></svg>
+    </button>
+    <nav class="cds-header__nav">
+      <a href="index.html">Accueil</a>
+      <a href="presentation.html">Présentation</a>
+      <a href="domaines.html">Domaines</a>
+      <a href="actualites.html" aria-current="page">Actualités</a>
+      <a href="honoraires.html">Honoraires</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="cds-header__spacer"></div>
+    <a class="cds-header__action" href="tel:+33986388353"><span style="font-variant-numeric:tabular-nums;">09 86 38 83 53</span></a>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <section class="page-hero">
+    <div class="cds-container">
+      <h1 class="page-hero__title">Actualités juridiques</h1>
+      <p class="page-hero__subtitle">Droit immobilier · Droit de la famille · Évolutions législatives</p>
+    </div>
+  </section>
+
+  <section class="actu-section">
+    <div class="cds-container">
+      <span class="cds-eyebrow">À la une</span>
+
+      <!-- Article vedette -->
+      <article class="actu-featured">
+        <img class="actu-featured__img" src="assets/images/image-6.jpg" alt="Réforme du droit de la copropriété" width="640" height="480" loading="eager" />
+        <div class="actu-featured__body">
+          <span class="actu-featured__tag">Droit immobilier</span>
+          <h2 class="actu-featured__title">Copropriété : les nouvelles obligations du syndic depuis 2024</h2>
+          <p class="actu-featured__excerpt">La loi Élan et ses décrets d'application ont renforcé les obligations de transparence des syndics de copropriété. Registre national, fonds travaux, dématérialisation des AG — tour d'horizon des changements qui impactent les copropriétaires.</p>
+          <p class="actu-featured__meta">Janvier 2026 · 5 min de lecture</p>
+          <a class="cds-btn cds-btn--primary" href="contact.html">
+            Poser une question
+            <svg class="cds-btn__icon" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Grille articles -->
+      <div class="actu-grid">
+        <article class="actu-card">
+          <img class="actu-card__img" src="assets/images/image-1.jpg" alt="Divorce par consentement mutuel" width="480" height="270" loading="lazy" />
+          <div class="actu-card__body">
+            <div class="actu-card__meta">
+              <span class="actu-card__tag">Droit de la famille</span>
+              <span>Novembre 2025</span>
+            </div>
+            <h3 class="actu-card__title">Divorce sans juge : bilan de 8 ans de pratique</h3>
+            <p class="actu-card__excerpt">Depuis le 1er janvier 2017, le divorce par consentement mutuel ne nécessite plus l'intervention d'un juge. Retour sur les avantages, les limites et les cas où le recours au juge reste indispensable.</p>
+            <span class="actu-card__link">
+              Lire l'article
+              <svg width="16" height="16" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
+            </span>
+          </div>
+        </article>
+
+        <article class="actu-card">
+          <img class="actu-card__img" src="assets/images/image-2.jpg" alt="Loyers impayés et expulsion" width="480" height="270" loading="lazy" />
+          <div class="actu-card__body">
+            <div class="actu-card__meta">
+              <span class="actu-card__tag">Droit immobilier</span>
+              <span>Octobre 2025</span>
+            </div>
+            <h3 class="actu-card__title">Loyers impayés : quelle procédure pour le bailleur ?</h3>
+            <p class="actu-card__excerpt">Face aux impayés, la procédure d'expulsion suit des étapes précises. Commandement de payer, saisine du juge, trêve hivernale — un guide pratique pour les propriétaires bailleurs.</p>
+            <span class="actu-card__link">
+              Lire l'article
+              <svg width="16" height="16" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
+            </span>
+          </div>
+        </article>
+
+        <article class="actu-card">
+          <img class="actu-card__img" src="assets/images/image-7.jpg" alt="Aide juridictionnelle" width="480" height="270" loading="lazy" />
+          <div class="actu-card__body">
+            <div class="actu-card__meta">
+              <span class="actu-card__tag">Honoraires</span>
+              <span>Septembre 2025</span>
+            </div>
+            <h3 class="actu-card__title">Aide juridictionnelle : conditions et démarches en 2025</h3>
+            <p class="actu-card__excerpt">Les plafonds de ressources de l'AJ ont été revalorisés en 2025. Qui peut en bénéficier, comment constituer le dossier et quelles sont les démarches à suivre auprès du tribunal.</p>
+            <span class="actu-card__link">
+              Lire l'article
+              <svg width="16" height="16" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
+            </span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="cds-footer">
+  <div class="cds-container">
+    <div class="cds-footer__grid">
+      <div class="cds-footer__col">
+        <h4>Cabinet</h4>
+        <div class="cds-footer__brand-name">Céline GENDRE</div>
+        <p class="cds-footer__tagline">Avocate au Barreau de Grenoble. Droit immobilier et droit de la famille.</p>
+      </div>
+      <div class="cds-footer__col">
+        <h4>Coordonnées</h4>
+        <ul>
+          <li>SCM Porte de France</li>
+          <li>5, place Hubert Dubedout — 38000 Grenoble</li>
+          <li><a href="tel:+33986388353">09 86 38 83 53</a></li>
+          <li><a href="mailto:cabinet@gendre-avocat.fr">cabinet@gendre-avocat.fr</a></li>
+        </ul>
+      </div>
+      <div class="cds-footer__col">
+        <h4>Navigation</h4>
+        <nav aria-label="Navigation secondaire">
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="presentation.html">Présentation</a></li>
+            <li><a href="domaines.html">Domaines</a></li>
+            <li><a href="actualites.html">Actualités</a></li>
+            <li><a href="honoraires.html">Honoraires</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="cds-footer__bottom">
+      <span>© 2026 Céline GENDRE — Avocat · Barreau de Grenoble · <a href="mentions-legales.html">Mentions légales</a></span>
+      <span>Les correspondances sont protégées par le secret professionnel.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Honoraires — Cabinet Céline GENDRE</title>
+<meta name="description" content="Informations sur les honoraires du Cabinet Céline GENDRE : tarifs, convention d'honoraires, aide juridictionnelle." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Serif:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/carbon.css" />
+<style>
+  .page-hero { position:relative; background-image:url('assets/images/enrico-bet-TCsCykbwSJw-unsplash.jpg'); background-size:cover; background-position:center; color:var(--text-on-color); min-height:320px; display:flex; align-items:center; padding:var(--sp-09) 0; }
+  .page-hero::before { content:''; position:absolute; inset:0; background:rgba(22,22,22,0.72); /* overlay — pas de token disponible */ }
+  .page-hero > .cds-container { position:relative; z-index:1; }
+  @media (max-width:671px){ .page-hero { min-height:200px; } }
+  .page-hero__title { font-family:'IBM Plex Serif', Georgia, serif; font-size: clamp(28px, 5vw, 42px); line-height:1.15; font-weight:300; color:var(--text-on-color); margin-bottom:var(--sp-03); }
+  .page-hero__subtitle { font-size:16px; color:var(--text-placeholder); }
+
+  /* ---- Intro ---- */
+  .hon-intro { padding: var(--sp-12) 0; }
+  .hon-intro__lead {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--text-primary);
+    max-width: 680px;
+    margin-bottom: var(--sp-07);
+  }
+  .hon-intro__body { font-size: 16px; line-height: 1.75; color: var(--text-secondary); max-width: 60ch; }
+
+  /* ---- Modes de facturation ---- */
+  .hon-modes { padding: var(--sp-12) 0; background: var(--layer-01); }
+  .hon-modes__title {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: 32px;
+    font-weight: 300;
+    margin-bottom: var(--sp-09);
+  }
+  .hon-modes__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--sp-05);
+  }
+  @media (min-width: 672px) { .hon-modes__grid { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1056px) { .hon-modes__grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .mode-tile {
+    background: var(--layer-02);
+    border: 1px solid var(--border-subtle);
+    padding: var(--sp-07);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-04);
+  }
+  .mode-tile__icon {
+    width: 32px;
+    height: 32px;
+    color: var(--interactive);
+    margin-bottom: var(--sp-03);
+  }
+  .mode-tile__title {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--text-primary);
+  }
+  .mode-tile__body { font-size: 14px; line-height: 22px; color: var(--text-secondary); }
+
+  /* ---- AJ ---- */
+  .hon-aj { padding: var(--sp-12) 0; }
+  .hon-aj__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--sp-09);
+    align-items: center;
+  }
+  @media (min-width: 1056px) { .hon-aj__grid { grid-template-columns: 1fr 1fr; } }
+  .hon-aj__title {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: 32px;
+    font-weight: 300;
+    margin-bottom: var(--sp-06);
+  }
+  .hon-aj__body { font-size: 16px; line-height: 1.75; color: var(--text-secondary); margin-bottom: var(--sp-06); }
+
+  .hon-aj__notice {
+    background: var(--layer-01);
+    border-left: 3px solid var(--interactive);
+    padding: var(--sp-06) var(--sp-07);
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--text-secondary);
+  }
+  .hon-aj__notice strong { color: var(--text-primary); font-weight: 500; }
+
+  /* ---- Convention ---- */
+  .hon-convention { padding: var(--sp-12) 0; background: var(--header-bg); color: var(--text-on-color); }
+  .hon-convention__title {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 300;
+    color: var(--text-on-color);
+    margin-bottom: var(--sp-06);
+    max-width: 640px;
+  }
+  .hon-convention__body { font-size: 16px; line-height: 1.75; color: #c6c6c6; max-width: 60ch; margin-bottom: var(--sp-07); }
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="sr-only focusable">Aller au contenu principal</a>
+
+<header class="cds-header">
+  <div class="cds-header__inner">
+    <a class="cds-header__brand" href="index.html">
+      <span class="cds-header__brand-mark" aria-hidden="true"></span>
+      <span>Céline GENDRE&nbsp;<span style="color:#8d8d8d;">Avocat</span></span>
+    </a>
+    <button class="cds-header__menu-toggle" data-menu-toggle aria-label="Menu" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor"><rect x="4" y="8" width="24" height="2"/><rect x="4" y="15" width="24" height="2"/><rect x="4" y="22" width="24" height="2"/></svg>
+    </button>
+    <nav class="cds-header__nav">
+      <a href="index.html">Accueil</a>
+      <a href="presentation.html">Présentation</a>
+      <a href="domaines.html">Domaines</a>
+      <a href="actualites.html">Actualités</a>
+      <a href="honoraires.html" aria-current="page">Honoraires</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="cds-header__spacer"></div>
+    <a class="cds-header__action" href="tel:+33986388353"><span style="font-variant-numeric:tabular-nums;">09 86 38 83 53</span></a>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <section class="page-hero">
+    <div class="cds-container">
+      <h1 class="page-hero__title">Honoraires</h1>
+      <p class="page-hero__subtitle">Transparence et information dès le premier entretien</p>
+    </div>
+  </section>
+
+  <section class="hon-intro">
+    <div class="cds-container">
+      <span class="cds-eyebrow">Engagement</span>
+      <p class="hon-intro__lead">Les honoraires sont fixés librement, discutés lors de la première consultation et formalisés dans une convention d'honoraires signée avant toute intervention.</p>
+      <div class="hon-intro__body">
+        <p>Conformément aux règles déontologiques du Barreau, les honoraires tiennent compte de la complexité de l'affaire, du temps consacré, et de la situation de chaque client. Aucune somme n'est engagée sans accord préalable écrit.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="hon-modes">
+    <div class="cds-container">
+      <span class="cds-eyebrow">Modes de facturation</span>
+      <h2 class="hon-modes__title">Comment sont calculés les honoraires ?</h2>
+      <div class="hon-modes__grid">
+        <div class="mode-tile">
+          <svg class="mode-tile__icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm0 26a12 12 0 1 1 12-12 12 12 0 0 1-12 12z"/><path d="M17 8h-2v9l7.24 4.36 1-1.7-6.24-3.76z"/></svg>
+          <h3 class="mode-tile__title">Honoraires au temps passé</h3>
+          <p class="mode-tile__body">Tarif horaire défini dans la convention d'honoraires. Adapté aux dossiers contentieux dont l'évolution est incertaine.</p>
+        </div>
+        <div class="mode-tile">
+          <svg class="mode-tile__icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M28 6H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zm0 18H4V8h24z"/><path d="M8 13h10v2H8zm0 5h7v2H8z"/></svg>
+          <h3 class="mode-tile__title">Forfait</h3>
+          <p class="mode-tile__body">Pour certaines prestations bien définies (divorce par consentement mutuel, rédaction d'acte), un forfait global peut être convenu.</p>
+        </div>
+        <div class="mode-tile">
+          <svg class="mode-tile__icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 2C8.28 2 2 8.28 2 16s6.28 14 14 14 14-6.28 14-14S23.72 2 16 2zm0 26C9.38 28 4 22.62 4 16S9.38 4 16 4s12 5.38 12 12-5.38 12-12 12z"/><path d="M16 8a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm-7 8h14v2H9z"/></svg>
+          <h3 class="mode-tile__title">Convention sur le résultat</h3>
+          <p class="mode-tile__body">Dans le respect des règles déontologiques, un honoraire complémentaire de résultat peut être prévu en sus d'un honoraire de base.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hon-aj">
+    <div class="cds-container">
+      <div class="hon-aj__grid">
+        <div>
+          <span class="cds-eyebrow">Aide juridictionnelle</span>
+          <h2 class="hon-aj__title">L'aide juridictionnelle est acceptée.</h2>
+          <p class="hon-aj__body">Si vos ressources ne vous permettent pas de financer entièrement vos frais d'avocat, vous pouvez bénéficier de l'aide juridictionnelle, prise en charge totale ou partielle par l'État.</p>
+          <a class="cds-btn cds-btn--primary" href="contact.html">
+            Nous contacter
+            <svg class="cds-btn__icon" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
+          </a>
+        </div>
+        <div class="hon-aj__notice">
+          <strong>Conditions d'éligibilité</strong><br><br>
+          L'aide juridictionnelle est accordée sous conditions de ressources. Le plafond varie selon la composition du foyer. Le dossier est à déposer au Bureau d'Aide Juridictionnelle (BAJ) du Tribunal judiciaire de Grenoble.<br><br>
+          Le cabinet vous accompagnera dans la constitution de votre dossier.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hon-convention">
+    <div class="cds-container">
+      <span class="cds-eyebrow" style="color:#a8a8a8; border-color:#525252;">Convention obligatoire</span>
+      <h2 class="hon-convention__title">Une convention signée avant toute intervention.</h2>
+      <p class="hon-convention__body">Conformément à la loi du 31 décembre 1971, une convention d'honoraires écrite est obligatoire pour tout dossier contentieux. Elle précise le mode de calcul des honoraires, les modalités de paiement et les conditions de résiliation.</p>
+      <a class="cds-btn cds-btn--primary" href="contact.html">
+        Prendre rendez-vous
+        <svg class="cds-btn__icon" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="cds-footer">
+  <div class="cds-container">
+    <div class="cds-footer__grid">
+      <div class="cds-footer__col">
+        <h4>Cabinet</h4>
+        <div class="cds-footer__brand-name">Céline GENDRE</div>
+        <p class="cds-footer__tagline">Avocate au Barreau de Grenoble. Droit immobilier et droit de la famille.</p>
+      </div>
+      <div class="cds-footer__col">
+        <h4>Coordonnées</h4>
+        <ul>
+          <li>SCM Porte de France</li>
+          <li>5, place Hubert Dubedout — 38000 Grenoble</li>
+          <li><a href="tel:+33986388353">09 86 38 83 53</a></li>
+          <li><a href="mailto:cabinet@gendre-avocat.fr">cabinet@gendre-avocat.fr</a></li>
+        </ul>
+      </div>
+      <div class="cds-footer__col">
+        <h4>Navigation</h4>
+        <nav aria-label="Navigation secondaire">
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="presentation.html">Présentation</a></li>
+            <li><a href="domaines.html">Domaines</a></li>
+            <li><a href="actualites.html">Actualités</a></li>
+            <li><a href="honoraires.html">Honoraires</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="cds-footer__bottom">
+      <span>© 2026 Céline GENDRE — Avocat · Barreau de Grenoble · <a href="mentions-legales.html">Mentions légales</a></span>
+      <span>Les correspondances sont protégées par le secret professionnel.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

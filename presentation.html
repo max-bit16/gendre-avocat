@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Présentation — Cabinet Céline GENDRE</title>
+<meta name="description" content="Céline GENDRE, avocate inscrite au Barreau de Grenoble depuis plus de 10 ans, spécialisée en droit immobilier et droit de la famille." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Serif:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/carbon.css" />
+<style>
+  .page-hero { position:relative; background-image:url('assets/images/marc-wieland-lH3zFaBhT_Q-unsplash.jpg'); background-size:cover; background-position:center; color:var(--text-on-color); min-height:320px; display:flex; align-items:center; padding:var(--sp-09) 0; }
+  .page-hero::before { content:''; position:absolute; inset:0; background:rgba(22,22,22,0.72); /* overlay — pas de token disponible */ }
+  .page-hero > .cds-container { position:relative; z-index:1; }
+  @media (max-width:671px){ .page-hero { min-height:200px; } }
+  .page-hero__title { font-family:'IBM Plex Serif', Georgia, serif; font-size: clamp(28px, 5vw, 42px); line-height:1.15; font-weight:300; color:var(--text-on-color); margin-bottom:var(--sp-03); }
+  .page-hero__subtitle { font-size:16px; color:var(--text-placeholder); }
+
+  /* ---- Bio ---- */
+  .bio { padding: var(--sp-12) 0; }
+  .bio__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--sp-09);
+    align-items: start;
+  }
+  @media (min-width: 1056px) {
+    .bio__grid { grid-template-columns: 1fr 320px; }
+  }
+  .bio__lead {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--text-primary);
+    margin-bottom: var(--sp-07);
+    max-width: 60ch;
+  }
+  .bio__body { font-size: 16px; line-height: 1.75; color: var(--text-secondary); max-width: 60ch; }
+  .bio__body p + p { margin-top: var(--sp-05); }
+
+  .bio__portrait {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+  }
+  @media (max-width: 671px) {
+    .bio__portrait { aspect-ratio: 1/1; }
+  }
+
+  /* ---- Formation ---- */
+  .formation { padding: var(--sp-12) 0; background: var(--layer-01); }
+  .formation__title {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: 32px;
+    font-weight: 300;
+    margin-bottom: var(--sp-09);
+  }
+
+  /* ---- Valeurs ---- */
+  .valeurs { padding: var(--sp-12) 0; }
+  .valeurs__title {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: 32px;
+    font-weight: 300;
+    margin-bottom: var(--sp-09);
+    max-width: 720px;
+  }
+  .valeurs__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--sp-05);
+  }
+  @media (min-width: 672px) { .valeurs__grid { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1056px) { .valeurs__grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .valeur-tile {
+    padding: var(--sp-07);
+    border-top: 2px solid var(--interactive);
+    background: var(--layer-01);
+  }
+  .valeur-tile__title {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: var(--sp-04);
+    color: var(--text-primary);
+  }
+  .valeur-tile__body { font-size: 14px; line-height: 22px; color: var(--text-secondary); }
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="sr-only focusable">Aller au contenu principal</a>
+
+<header class="cds-header">
+  <div class="cds-header__inner">
+    <a class="cds-header__brand" href="index.html">
+      <span class="cds-header__brand-mark" aria-hidden="true"></span>
+      <span>Céline GENDRE&nbsp;<span style="color:#8d8d8d;">Avocat</span></span>
+    </a>
+    <button class="cds-header__menu-toggle" data-menu-toggle aria-label="Menu" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor"><rect x="4" y="8" width="24" height="2"/><rect x="4" y="15" width="24" height="2"/><rect x="4" y="22" width="24" height="2"/></svg>
+    </button>
+    <nav class="cds-header__nav">
+      <a href="index.html">Accueil</a>
+      <a href="presentation.html" aria-current="page">Présentation</a>
+      <a href="domaines.html">Domaines</a>
+      <a href="actualites.html">Actualités</a>
+      <a href="honoraires.html">Honoraires</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="cds-header__spacer"></div>
+    <a class="cds-header__action" href="tel:+33986388353"><span style="font-variant-numeric:tabular-nums;">09 86 38 83 53</span></a>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <section class="page-hero">
+    <div class="cds-container">
+      <h1 class="page-hero__title">Présentation du cabinet</h1>
+      <p class="page-hero__subtitle">Céline GENDRE · Avocate au Barreau de Grenoble</p>
+    </div>
+  </section>
+
+  <section class="bio">
+    <div class="cds-container">
+      <div class="bio__grid">
+        <div>
+          <span class="cds-eyebrow">Le cabinet</span>
+          <p class="bio__lead">Avocate inscrite au Barreau de Grenoble, Céline GENDRE accompagne ses clients en droit immobilier et en droit de la famille avec rigueur et bienveillance.</p>
+          <div class="bio__body">
+            <p>Titulaire d'un Master 2 en droit privé, Céline GENDRE exerce depuis plus de dix ans au sein de la SCM Porte de France, au cœur de Grenoble. Elle intervient aussi bien en conseil qu'en contentieux, devant l'ensemble des juridictions civiles et familiales.</p>
+            <p>Sa pratique quotidienne du droit immobilier — construction, baux, copropriété, troubles de voisinage — et du droit de la famille — divorce, autorité parentale, violences conjugales — lui confère une expertise opérationnelle directement au service de vos intérêts.</p>
+            <p>L'aide juridictionnelle est acceptée. La première consultation permet de faire le point sur votre situation et d'envisager ensemble la stratégie la plus adaptée.</p>
+          </div>
+        </div>
+        <img class="bio__portrait" src="assets/images/portrait.jpg" alt="Céline GENDRE, avocate au Barreau de Grenoble" width="320" height="427" loading="eager" />
+      </div>
+    </div>
+  </section>
+
+  <section class="formation">
+    <div class="cds-container">
+      <span class="cds-eyebrow">Parcours</span>
+      <h2 class="formation__title">Formation et expérience</h2>
+      <dl class="cds-deflist">
+        <div>
+          <dt>Inscription au Barreau</dt>
+          <dd>Barreau de Grenoble — Isère (38)</dd>
+        </div>
+        <div>
+          <dt>Diplôme</dt>
+          <dd>Master 2 Droit privé — Université Grenoble Alpes</dd>
+        </div>
+        <div>
+          <dt>Spécialités</dt>
+          <dd>Droit immobilier · Droit de la construction · Droit de la famille</dd>
+        </div>
+        <div>
+          <dt>Juridictions</dt>
+          <dd>Tribunal judiciaire · Cour d'appel de Grenoble · Juge aux Affaires Familiales · Juge des Enfants</dd>
+        </div>
+        <div>
+          <dt>Structures</dt>
+          <dd>SCM Porte de France — 5, place Hubert Dubedout, 38000 Grenoble</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="valeurs">
+    <div class="cds-container">
+      <span class="cds-eyebrow">Engagements</span>
+      <h2 class="valeurs__title">Ce qui guide notre pratique au quotidien.</h2>
+      <div class="valeurs__grid">
+        <div class="valeur-tile">
+          <h3 class="valeur-tile__title">Écoute</h3>
+          <p class="valeur-tile__body">Chaque situation est unique. Un premier entretien approfondi permet de comprendre votre contexte avant toute décision stratégique.</p>
+        </div>
+        <div class="valeur-tile">
+          <h3 class="valeur-tile__title">Transparence</h3>
+          <p class="valeur-tile__body">Honoraires annoncés dès le départ, stratégie expliquée clairement, suivi régulier de l'avancement de votre dossier.</p>
+        </div>
+        <div class="valeur-tile">
+          <h3 class="valeur-tile__title">Rigueur</h3>
+          <p class="valeur-tile__body">Analyse précise des textes et de la jurisprudence, rédaction soignée des actes, respect des délais de procédure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="cds-footer">
+  <div class="cds-container">
+    <div class="cds-footer__grid">
+      <div class="cds-footer__col">
+        <h4>Cabinet</h4>
+        <div class="cds-footer__brand-name">Céline GENDRE</div>
+        <p class="cds-footer__tagline">Avocate au Barreau de Grenoble. Droit immobilier et droit de la famille.</p>
+      </div>
+      <div class="cds-footer__col">
+        <h4>Coordonnées</h4>
+        <ul>
+          <li>SCM Porte de France</li>
+          <li>5, place Hubert Dubedout — 38000 Grenoble</li>
+          <li><a href="tel:+33986388353">09 86 38 83 53</a></li>
+          <li><a href="mailto:cabinet@gendre-avocat.fr">cabinet@gendre-avocat.fr</a></li>
+        </ul>
+      </div>
+      <div class="cds-footer__col">
+        <h4>Navigation</h4>
+        <nav aria-label="Navigation secondaire">
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="presentation.html">Présentation</a></li>
+            <li><a href="domaines.html">Domaines</a></li>
+            <li><a href="actualites.html">Actualités</a></li>
+            <li><a href="honoraires.html">Honoraires</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="cds-footer__bottom">
+      <span>© 2026 Céline GENDRE — Avocat · Barreau de Grenoble · <a href="mentions-legales.html">Mentions légales</a></span>
+      <span>Les correspondances sont protégées par le secret professionnel.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
