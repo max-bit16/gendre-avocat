@@ -114,13 +114,17 @@
     var ok      = true;
 
     form.querySelectorAll('input[required], textarea[required]').forEach(function (f) {
+      var errId  = f.getAttribute('aria-describedby');
+      var errEl  = errId ? document.getElementById(errId) : null;
       if (!f.value.trim()) {
         ok = false;
         f.setAttribute('aria-invalid', 'true');
         f.style.boxShadow = 'inset 0 -2px 0 0 #da1e28';
+        if (errEl) errEl.textContent = 'Ce champ est obligatoire.';
       } else {
         f.removeAttribute('aria-invalid');
         f.style.boxShadow = '';
+        if (errEl) errEl.textContent = '';
       }
     });
 
