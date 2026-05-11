@@ -648,3 +648,35 @@ a.cds-tile:hover, button.cds-tile:hover {
   position: static; width: auto; height: auto;
   overflow: visible; clip: auto; white-space: normal;
 }
+
+/* ---------- Animations site ---------- */
+
+@keyframes hero-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero__eyebrow       { animation: hero-in 540ms var(--easing-entrance) both; }
+.hero__title         { animation: hero-in 600ms 70ms  var(--easing-entrance) both; }
+.hero__subtitle      { animation: hero-in 580ms 160ms var(--easing-entrance) both; }
+.hero__actions       { animation: hero-in 560ms 250ms var(--easing-entrance) both; }
+.page-hero__eyebrow  { animation: hero-in 520ms var(--easing-entrance) both; }
+.page-hero__title    { animation: hero-in 560ms 60ms  var(--easing-entrance) both; }
+.page-hero__subtitle { animation: hero-in 540ms 140ms var(--easing-entrance) both; }
+
+.js-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 440ms var(--easing-entrance),
+              transform 440ms var(--easing-entrance);
+}
+.js-reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+/* Scroll-driven hero parallax — progressive enhancement */
+@supports (animation-timeline: scroll()) {
+  @keyframes hero-px { to { background-position: center 26%; } }
+  .hero, .page-hero {
+    animation: hero-px linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 55vh;
+  }
+}

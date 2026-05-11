@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gendre-avocat.fr/sitemap.xml

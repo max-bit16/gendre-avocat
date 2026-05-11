@@ -5,12 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Contact — Cabinet Céline GENDRE</title>
 <meta name="description" content="Contactez le Cabinet Céline GENDRE à Grenoble. Formulaire en ligne, téléphone, adresse." />
+<link rel="canonical" href="https://gendre-avocat.fr/contact.html" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://gendre-avocat.fr/contact.html" />
+<meta property="og:title" content="Contact — Cabinet Céline GENDRE" />
+<meta property="og:description" content="Contactez le Cabinet Céline GENDRE à Grenoble. Formulaire en ligne, téléphone, adresse." />
+<meta property="og:image" content="https://gendre-avocat.fr/assets/images/image-5.webp" />
+<meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Serif:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="assets/carbon.css" />
 <style>
-  .page-hero { position:relative; background-image:url('assets/images/image-3.jpg'); background-size:cover; background-position:center; color:var(--text-on-color); min-height:260px; display:flex; align-items:center; padding:var(--sp-09) 0; }
+  .page-hero { position:relative; background-image:url('assets/images/image-3.webp'); background-size:cover; background-position:center; color:var(--text-on-color); min-height:260px; display:flex; align-items:center; padding:var(--sp-09) 0; }
   .page-hero::before { content:''; position:absolute; inset:0; background:rgba(22,22,22,0.72); /* overlay — pas de token disponible */ }
   .page-hero > .cds-container { position:relative; z-index:1; }
   @media (max-width:671px){ .page-hero { min-height:180px; } }
@@ -136,7 +143,10 @@
 
         <div>
           <h2 class="contact-form__title">Envoyer un message</h2>
-          <form data-cds-form novalidate>
+          <form data-cds-form novalidate method="POST">
+            <input type="hidden" name="access_key" value="VOTRE_CLE_WEB3FORMS" />
+            <input type="hidden" name="subject" value="Nouveau message — Cabinet Céline GENDRE" />
+            <input type="hidden" name="from_name" value="Site cabinet-gendre" />
             <div class="form-row">
               <div class="cds-field">
                 <label class="cds-field__label" for="nom">Nom *</label>
@@ -165,7 +175,7 @@
             </div>
             <p style="font-size:12px; color:var(--text-secondary); margin-bottom:var(--sp-06);">Les champs marqués d'un * sont obligatoires. Vos données sont traitées conformément à notre <a href="mentions-legales.html">politique de confidentialité</a>.</p>
             <button class="cds-btn cds-btn--primary" type="submit">
-              Envoyer le message
+              <span class="btn-label">Envoyer le message</span>
               <svg class="cds-btn__icon" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
             </button>
             <p data-form-status role="status" aria-live="polite"></p>
