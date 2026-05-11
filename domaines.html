@@ -9,38 +9,262 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Serif:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="assets/carbon.css" />
 <style>
-  .page-hero { position:relative; background-image:url('assets/images/image-5.jpg'); background-size:cover; background-position:center top; color:var(--text-on-color); min-height:320px; display:flex; align-items:center; padding:var(--sp-09) 0; }
-  .page-hero::before { content:''; position:absolute; inset:0; background:rgba(22,22,22,0.72); /* overlay — pas de token disponible */ }
-  .page-hero > .cds-container { position:relative; z-index:1; }
-  @media (max-width:671px){ .page-hero{ min-height:200px; } }
-  .page-hero__title { font-family:'IBM Plex Serif', Georgia, serif; font-size: clamp(28px, 5vw, 42px); line-height:1.15; font-weight:300; color:var(--text-on-color); margin-bottom:var(--sp-03); }
-  .page-hero__subtitle { font-size:16px; color:var(--text-placeholder); }
+  /* ============================================================
+     DOMAINES.HTML — styles de page
+     Élévation design : taste · typeset · adapt · polish
+     ============================================================ */
 
-  .dom-intro { padding: var(--sp-10) 0 0; }
-  .dom-intro__grid { display:grid; grid-template-columns: 1fr; gap: var(--sp-07); align-items:start; }
-  @media (min-width:672px){ .dom-intro__grid { grid-template-columns: 1fr 280px; gap: var(--sp-09); } }
-  .dom-intro__lead { font-family:'IBM Plex Serif', Georgia, serif; font-size: 24px; line-height: 1.4; font-weight: 300; color: var(--text-primary); max-width: 60ch; }
-  .dom-intro__img { width: 280px; height: 280px; object-fit: cover; object-position: center; display:block; }
-  @media (max-width:671px){ .dom-intro__img { display:none; } }
+  /* ---- Hero ---- */
+  /* [gpt-taste] cinématique : plus haut, aligné bas, H1 éditorial */
+  .page-hero {
+    position: relative;
+    background-image: url('assets/images/image-5.jpg');
+    background-size: cover;
+    background-position: center top;
+    color: var(--text-on-color);
+    min-height: 480px;
+    display: flex;
+    align-items: flex-end;
+    padding: var(--sp-12) 0;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* gradient directionnel : masse en bas pour faire ressortir le texte */
+    background: linear-gradient(
+      to top,
+      rgba(22,22,22,0.88) 0%,
+      rgba(22,22,22,0.55) 50%,
+      rgba(22,22,22,0.30) 100%
+    );
+  }
+  .page-hero > .cds-container { position: relative; z-index: 1; }
 
+  /* [adapt] mobile : hero raccourci, texte recentré */
+  @media (max-width: 671px) {
+    .page-hero {
+      min-height: 300px;
+      align-items: center;
+      padding: var(--sp-09) 0;
+    }
+  }
+
+  /* [gpt-taste + typeset] eyebrow monospaced avec règle bleue */
+  .page-hero__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-04);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #8d8d8d;
+    margin-bottom: var(--sp-06);
+    font-weight: 400;
+  }
+  .page-hero__eyebrow::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--interactive);
+    flex-shrink: 0;
+  }
+
+  /* [typeset] H1 : fluid, serré, grande taille éditoriale */
+  .page-hero__title {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: clamp(32px, 5.5vw, 56px);
+    line-height: 1.08;
+    font-weight: 300;
+    color: var(--text-on-color);
+    margin-bottom: var(--sp-04);
+    letter-spacing: -0.025em;
+    max-width: 800px;
+  }
+  @media (max-width: 671px) {
+    .page-hero__title {
+      font-size: clamp(26px, 8vw, 36px);
+      line-height: 1.12;
+    }
+  }
+
+  /* [polish] subtitle : mono petit pour contraste avec le serif */
+  .page-hero__subtitle {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: #a8a8a8;
+    letter-spacing: 0.06em;
+  }
+
+  /* ---- Intro ---- */
+  /* [gpt-taste] section symétrique (plus de padding asymétrique) */
+  .dom-intro { padding: var(--sp-12) 0; }
+  @media (max-width: 671px) { .dom-intro { padding: var(--sp-09) 0; } }
+
+  .dom-intro__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--sp-07);
+    align-items: start;
+  }
+  @media (min-width: 672px) {
+    .dom-intro__grid { grid-template-columns: 1fr 280px; gap: var(--sp-09); }
+  }
+
+  /* [typeset] lead : plus grand, mieux tracké */
+  .dom-intro__lead {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: clamp(20px, 2.5vw, 28px);
+    line-height: 1.5;
+    font-weight: 300;
+    color: var(--text-primary);
+    max-width: 60ch;
+    letter-spacing: -0.01em;
+  }
+  .dom-intro__img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+  @media (max-width: 671px) { .dom-intro__img { display: none; } }
+
+  /* ---- Sections domaines ---- */
   .dom-section { padding: var(--sp-12) 0; }
+  /* [adapt] padding réduit sur mobile */
+  @media (max-width: 671px) { .dom-section { padding: var(--sp-09) 0; } }
+
   .dom-section--alt { background: var(--layer-01); }
+
   .dom-section__head { margin-bottom: var(--sp-09); max-width: 720px; }
-  .dom-section__title { font-family:'IBM Plex Serif', Georgia, serif; font-size:32px; font-weight:300; margin-bottom: var(--sp-05); }
 
-  .dom-grid { display:grid; grid-template-columns:1fr; gap:1px; background:var(--border-subtle); }
-  @media (min-width:672px){ .dom-grid{ grid-template-columns:1fr 1fr; } }
-  @media (min-width:1056px){ .dom-grid--5 { grid-template-columns:repeat(3, 1fr); } }
+  /* [typeset] titre section : fluid + letter-spacing éditorial */
+  .dom-section__title {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: clamp(24px, 3.5vw, 36px);
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--sp-05);
+  }
 
-  .dom-tile { background: var(--layer-02); padding: var(--sp-07); display:flex; flex-direction:column; gap:var(--sp-05); min-height: 240px; border: 1px solid var(--border-subtle); margin: 0; }
+  /* ---- Grille de tiles ---- */
+  .dom-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    background: var(--border-subtle);
+  }
+  @media (min-width: 672px) { .dom-grid { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1056px) { .dom-grid--5 { grid-template-columns: repeat(3, 1fr); } }
+
+  /* ---- Tiles ---- */
+  /* [polish] hover, [typeset] body 15px, [adapt] mobile padding */
+  .dom-tile {
+    background: var(--layer-02);
+    padding: var(--sp-07);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-04);
+    min-height: 200px;
+    border: 1px solid var(--border-subtle);
+    margin: 0;
+    transition: background-color var(--dur-fast-02) var(--easing-standard);
+  }
+  @media (max-width: 671px) {
+    .dom-tile { padding: var(--sp-06); min-height: 160px; }
+  }
+  .dom-tile:hover { background: var(--layer-hover-01); }
   .dom-section--alt .dom-tile { background: var(--layer-01); }
-  .dom-tile__num { font-size:12px; letter-spacing:0.32px; color:var(--text-secondary); }
-  .dom-tile__title { font-family:'IBM Plex Serif', Georgia, serif; font-size:22px; font-weight:300; line-height:1.2; }
-  .dom-tile__text { font-size:14px; line-height:22px; color:var(--text-secondary); }
+  .dom-section--alt .dom-tile:hover { background: var(--layer-hover-01); }
 
-  .dom-cta { padding: var(--sp-12) 0; text-align:center; background: var(--header-bg); color:var(--text-on-color); }
-  .dom-cta__title { font-family:'IBM Plex Serif', Georgia, serif; font-size:32px; font-weight:300; margin-bottom:var(--sp-07); color:var(--text-on-color); }
-  .dom-cta .cds-btn { margin: 0 auto; }
+  /* [typeset + polish] numéro monospaced — plus précis/technique */
+  .dom-tile__num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--text-secondary);
+  }
+
+  /* [typeset] titre tile : letter-spacing éditorial */
+  .dom-tile__title {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+  }
+
+  /* [typeset] body : 15px/1.65 — plus confortable */
+  .dom-tile__text {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--text-secondary);
+  }
+
+  /* ---- Tile vedette ---- */
+  /* [gpt-taste] brise la monotonie de la grille uniforme */
+  @media (min-width: 672px) {
+    .dom-tile--featured {
+      grid-column: span 2;
+    }
+    .dom-tile--featured .dom-tile__title {
+      font-size: 28px;
+    }
+    .dom-tile--featured .dom-tile__text {
+      max-width: 72ch;
+    }
+  }
+
+  /* ---- CTA ---- */
+  /* [gpt-taste] layout 2 cols : texte à gauche, bouton à droite — plus éditorial */
+  .dom-cta {
+    padding: var(--sp-12) 0;
+    background: var(--header-bg);
+    color: var(--text-on-color);
+  }
+  @media (max-width: 671px) { .dom-cta { padding: var(--sp-09) 0; } }
+
+  .dom-cta__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--sp-07);
+    align-items: end;
+  }
+  @media (min-width: 672px) {
+    .dom-cta__inner {
+      grid-template-columns: 1fr auto;
+      gap: var(--sp-09);
+    }
+  }
+
+  /* [typeset] titre CTA : fluid + tenu éditorial */
+  .dom-cta__title {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: clamp(22px, 3.5vw, 36px);
+    font-weight: 300;
+    color: var(--text-on-color);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    max-width: 520px;
+  }
+
+  /* ---- Ancres : scroll-margin pour header sticky 64px ---- */
+  /* [polish] évite que le header masque le titre de section */
+  #immobilier,
+  #famille {
+    scroll-margin-top: 80px;
+  }
+
+  /* ---- Reduced motion ---- */
+  @media (prefers-reduced-motion: reduce) {
+    .dom-tile,
+    .dom-tile * { transition: none !important; }
+  }
 </style>
 </head>
 <body>
@@ -73,8 +297,9 @@
 
   <section class="page-hero">
     <div class="cds-container">
+      <p class="page-hero__eyebrow">Cabinet Céline GENDRE</p>
       <h1 class="page-hero__title">Domaines d'intervention</h1>
-      <p class="page-hero__subtitle">Droit immobilier · Droit de la famille</p>
+      <p class="page-hero__subtitle">Droit immobilier &nbsp;·&nbsp; Droit de la famille</p>
     </div>
   </section>
 
@@ -94,7 +319,7 @@
         <h2 class="dom-section__title">Construction, baux, propriété et copropriété.</h2>
       </header>
       <div class="dom-grid">
-        <article class="dom-tile">
+        <article class="dom-tile dom-tile--featured">
           <span class="dom-tile__num">01 · Domaine</span>
           <h3 class="dom-tile__title">Droit de la Construction</h3>
           <p class="dom-tile__text">Litiges nés d'une construction ou de travaux, pour particuliers et entreprises. Abandon de chantier, retards, malfaçons, désignation d'expert judiciaire, mobilisation des garanties, indemnisation.</p>
@@ -125,7 +350,7 @@
         <h2 class="dom-section__title">Divorce, séparation, protection et autorité parentale.</h2>
       </header>
       <div class="dom-grid dom-grid--5">
-        <article class="dom-tile">
+        <article class="dom-tile dom-tile--featured">
           <span class="dom-tile__num">01 · Domaine</span>
           <h3 class="dom-tile__title">Divorce</h3>
           <p class="dom-tile__text">4 types de divorce en France. Depuis le 01/01/2017, le divorce par consentement mutuel se conclut sans juge. Un avocat est obligatoire pour chaque époux dès le début de la procédure.</p>
@@ -156,11 +381,13 @@
 
   <section class="dom-cta">
     <div class="cds-container">
-      <h2 class="dom-cta__title">Une question, une situation à analyser ?</h2>
-      <a class="cds-btn cds-btn--primary" href="contact.html" style="margin:0 auto;">
-        Prendre contact
-        <svg class="cds-btn__icon" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
-      </a>
+      <div class="dom-cta__inner">
+        <h2 class="dom-cta__title">Une question, une situation à analyser ?</h2>
+        <a class="cds-btn cds-btn--primary" href="contact.html">
+          Prendre contact
+          <svg class="cds-btn__icon" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
+        </a>
+      </div>
     </div>
   </section>
 

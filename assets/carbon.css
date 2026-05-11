@@ -623,6 +623,21 @@ a.cds-tile:hover, button.cds-tile:hover {
   color: var(--text-primary);
 }
 
+/* ---------- Ancres — scroll-margin pour header sticky 64px ---------- */
+[id] { scroll-margin-top: 80px; }
+
+/* ---------- Reduced motion — désactive toutes les transitions ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* ---------- Accessibilité ---------- */
 .sr-only {
   position: absolute; width: 1px; height: 1px;
