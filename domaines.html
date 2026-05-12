@@ -109,34 +109,20 @@
   .dom-intro { padding: var(--sp-12) 0; }
   @media (max-width: 671px) { .dom-intro { padding: var(--sp-09) 0; } }
 
-  .dom-intro__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--sp-07);
-    align-items: start;
-  }
-  @media (min-width: 672px) {
-    .dom-intro__grid { grid-template-columns: 1fr 280px; gap: var(--sp-09); }
-  }
+  .dom-intro__grid { display: block; }
 
-  /* [typeset] lead : plus grand, mieux tracké */
   .dom-intro__lead {
     font-family: 'IBM Plex Serif', Georgia, serif;
-    font-size: clamp(20px, 2.5vw, 28px);
-    line-height: 1.5;
+    font-size: clamp(22px, 3vw, 36px);
+    line-height: 1.45;
     font-weight: 300;
     color: var(--text-primary);
-    max-width: 60ch;
-    letter-spacing: -0.01em;
+    max-width: 820px;
+    letter-spacing: -0.02em;
+    padding-left: var(--sp-07);
+    border-left: 2px solid var(--interactive);
   }
-  .dom-intro__img {
-    width: 280px;
-    height: 280px;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-  }
-  @media (max-width: 671px) { .dom-intro__img { display: none; } }
+  .dom-intro__img { display: none; }
 
   /* ---- Sections domaines ---- */
   .dom-section { padding: var(--sp-12) 0; }
@@ -166,6 +152,10 @@
   }
   @media (min-width: 672px) { .dom-grid { grid-template-columns: 1fr 1fr; } }
   @media (min-width: 1056px) { .dom-grid--5 { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 672px) {
+    .dom-grid--3 { grid-template-columns: repeat(3, 1fr); }
+    .dom-grid--3 .dom-tile--featured { grid-column: span 3; }
+  }
 
   /* ---- Tiles ---- */
   /* [polish] hover, [typeset] body 15px, [adapt] mobile padding */
@@ -176,10 +166,20 @@
     flex-direction: column;
     gap: var(--sp-04);
     min-height: 200px;
-    border: 1px solid var(--border-subtle);
+    border: none;
     margin: 0;
+    position: relative;
     transition: background-color var(--dur-fast-02) var(--easing-standard);
   }
+  .dom-tile::after {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 0;
+    background: var(--interactive);
+    transition: width var(--dur-fast-02) var(--easing-standard);
+  }
+  .dom-tile:hover::after { width: 2px; }
   @media (max-width: 671px) {
     .dom-tile { padding: var(--sp-06); min-height: 160px; }
   }
@@ -324,7 +324,7 @@
         <span class="cds-eyebrow">01 / Droit immobilier</span>
         <h2 class="dom-section__title">Construction, baux, propriété et copropriété.</h2>
       </header>
-      <div class="dom-grid">
+      <div class="dom-grid dom-grid--3">
         <article class="dom-tile dom-tile--featured">
           <span class="dom-tile__num">01 · Domaine</span>
           <h3 class="dom-tile__title">Droit de la Construction</h3>

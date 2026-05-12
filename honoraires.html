@@ -41,37 +41,55 @@
     font-family: 'IBM Plex Serif', Georgia, serif;
     font-size: 32px;
     font-weight: 300;
-    margin-bottom: var(--sp-09);
+    margin-bottom: var(--sp-10);
   }
   .hon-modes__grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--sp-05);
+    gap: 0;
+    border-top: 1px solid var(--border-subtle);
   }
-  @media (min-width: 672px) { .hon-modes__grid { grid-template-columns: 1fr 1fr; } }
-  @media (min-width: 1056px) { .hon-modes__grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 1056px) {
+    .hon-modes__grid {
+      grid-template-columns: repeat(3, 1fr);
+      border-top: none;
+    }
+  }
 
   .mode-tile {
-    background: var(--layer-02);
-    border: 1px solid var(--border-subtle);
-    padding: var(--sp-07);
+    background: transparent;
+    border: none;
+    border-top: 1px solid var(--border-subtle);
+    padding: var(--sp-08) 0;
     display: flex;
     flex-direction: column;
     gap: var(--sp-04);
   }
-  .mode-tile__icon {
-    width: 32px;
-    height: 32px;
+  @media (min-width: 1056px) {
+    .mode-tile {
+      border-top: none;
+      border-left: 1px solid var(--border-subtle);
+      padding: var(--sp-08) var(--sp-08);
+    }
+    .mode-tile:first-child { border-left: none; padding-left: 0; }
+  }
+  .mode-tile__icon { display: none; }
+  .mode-tile__index {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
     color: var(--interactive);
-    margin-bottom: var(--sp-03);
+    margin-bottom: var(--sp-02);
   }
   .mode-tile__title {
     font-family: 'IBM Plex Serif', Georgia, serif;
-    font-size: 20px;
+    font-size: clamp(20px, 2vw, 26px);
     font-weight: 300;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
     color: var(--text-primary);
   }
-  .mode-tile__body { font-size: 14px; line-height: 22px; color: var(--text-secondary); }
+  .mode-tile__body { font-size: 14px; line-height: 1.7; color: var(--text-secondary); }
 
   /* ---- AJ ---- */
   .hon-aj { padding: var(--sp-12) 0; }
@@ -164,17 +182,17 @@
       <h2 class="hon-modes__title">Comment sont calculés les honoraires ?</h2>
       <div class="hon-modes__grid">
         <div class="mode-tile">
-          <svg class="mode-tile__icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm0 26a12 12 0 1 1 12-12 12 12 0 0 1-12 12z"/><path d="M17 8h-2v9l7.24 4.36 1-1.7-6.24-3.76z"/></svg>
+          <span class="mode-tile__index">01</span>
           <h3 class="mode-tile__title">Honoraires au temps passé</h3>
           <p class="mode-tile__body">Tarif horaire défini dans la convention d'honoraires. Adapté aux dossiers contentieux dont l'évolution est incertaine.</p>
         </div>
         <div class="mode-tile">
-          <svg class="mode-tile__icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M28 6H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zm0 18H4V8h24z"/><path d="M8 13h10v2H8zm0 5h7v2H8z"/></svg>
+          <span class="mode-tile__index">02</span>
           <h3 class="mode-tile__title">Forfait</h3>
           <p class="mode-tile__body">Pour certaines prestations bien définies (divorce par consentement mutuel, rédaction d'acte), un forfait global peut être convenu.</p>
         </div>
         <div class="mode-tile">
-          <svg class="mode-tile__icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 2C8.28 2 2 8.28 2 16s6.28 14 14 14 14-6.28 14-14S23.72 2 16 2zm0 26C9.38 28 4 22.62 4 16S9.38 4 16 4s12 5.38 12 12-5.38 12-12 12z"/><path d="M16 8a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm-7 8h14v2H9z"/></svg>
+          <span class="mode-tile__index">03</span>
           <h3 class="mode-tile__title">Convention sur le résultat</h3>
           <p class="mode-tile__body">Dans le respect des règles déontologiques, un honoraire complémentaire de résultat peut être prévu en sus d'un honoraire de base.</p>
         </div>

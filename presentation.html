@@ -27,23 +27,35 @@
   .bio__grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--sp-09);
+    gap: 0;
     align-items: start;
+    border-top: 1px solid var(--border-subtle);
   }
   @media (min-width: 1056px) {
-    .bio__grid { grid-template-columns: 1fr 320px; }
+    .bio__grid { grid-template-columns: 1fr 360px; }
   }
+
+  .bio__content { padding-top: var(--sp-09); padding-bottom: var(--sp-12); }
+  @media (min-width: 1056px) {
+    .bio__content { padding-right: var(--sp-10); border-right: 1px solid var(--border-subtle); }
+  }
+
   .bio__lead {
     font-family: 'IBM Plex Serif', Georgia, serif;
-    font-size: clamp(20px, 3vw, 28px);
+    font-size: clamp(22px, 3.2vw, 34px);
     font-weight: 300;
-    line-height: 1.5;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
     color: var(--text-primary);
-    margin-bottom: var(--sp-07);
-    max-width: 60ch;
+    margin-bottom: var(--sp-08);
   }
-  .bio__body { font-size: 16px; line-height: 1.75; color: var(--text-secondary); max-width: 60ch; }
+  .bio__body { font-size: 15px; line-height: 1.85; color: var(--text-secondary); }
   .bio__body p + p { margin-top: var(--sp-05); }
+
+  .bio__portrait-wrap { padding-top: var(--sp-09); }
+  @media (min-width: 1056px) {
+    .bio__portrait-wrap { padding-left: var(--sp-10); position: sticky; top: 80px; }
+  }
 
   .bio__portrait {
     width: 100%;
@@ -52,9 +64,24 @@
     object-position: top;
     display: block;
   }
-  @media (max-width: 671px) {
-    .bio__portrait { aspect-ratio: 1/1; }
+  @media (max-width: 671px) { .bio__portrait { aspect-ratio: 4/3; } }
+
+  .bio__credentials { margin-top: var(--sp-07); border-top: 1px solid var(--border-subtle); }
+  .bio__cred {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: var(--sp-04) 0;
+    border-bottom: 1px solid var(--border-subtle);
   }
+  .bio__cred-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+  }
+  .bio__cred-value { font-size: 13px; color: var(--text-primary); line-height: 1.5; }
 
   /* ---- Formation ---- */
   .formation { padding: var(--sp-12) 0; background: var(--layer-01); }
@@ -135,7 +162,7 @@
   <section class="bio">
     <div class="cds-container">
       <div class="bio__grid">
-        <div>
+        <div class="bio__content">
           <span class="cds-eyebrow">Le cabinet</span>
           <p class="bio__lead">Avocate inscrite au Barreau de Grenoble, Céline GENDRE accompagne ses clients en droit immobilier et en droit de la famille avec rigueur et bienveillance.</p>
           <div class="bio__body">
@@ -144,7 +171,23 @@
             <p>L'aide juridictionnelle est acceptée. La première consultation permet de faire le point sur votre situation et d'envisager ensemble la stratégie la plus adaptée.</p>
           </div>
         </div>
-        <img class="bio__portrait" src="assets/images/portrait.webp" alt="Céline GENDRE, avocate au Barreau de Grenoble" width="320" height="427" loading="eager" />
+        <div class="bio__portrait-wrap">
+          <img class="bio__portrait" src="assets/images/portrait.webp" alt="Céline GENDRE, avocate au Barreau de Grenoble" width="360" height="480" loading="eager" />
+          <div class="bio__credentials">
+            <div class="bio__cred">
+              <span class="bio__cred-label">Barreau</span>
+              <span class="bio__cred-value">Grenoble — Isère</span>
+            </div>
+            <div class="bio__cred">
+              <span class="bio__cred-label">Diplôme</span>
+              <span class="bio__cred-value">Master 2 Droit privé — Université Grenoble Alpes</span>
+            </div>
+            <div class="bio__cred">
+              <span class="bio__cred-label">Juridictions</span>
+              <span class="bio__cred-value">TJ · JAF · Cour d'appel de Grenoble</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
