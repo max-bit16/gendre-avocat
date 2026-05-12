@@ -417,6 +417,11 @@ h1, h2, h3, h4, h5, h6,
 }
 .cds-btn--ghost:hover { background-color: var(--layer-hover-01); color: var(--interactive-hover); }
 
+/* a:visited (0,1,1) beat .cds-btn--primary (0,1,0) — compound selectors restore correct text color */
+a.cds-btn--primary:link, a.cds-btn--primary:visited { color: var(--text-on-color); }
+a.cds-btn--secondary:link, a.cds-btn--secondary:visited { color: var(--text-on-color); }
+a.cds-header__action:link, a.cds-header__action:visited { color: #ffffff; }
+
 .cds-btn:focus-visible {
   outline: none;
   box-shadow: inset 0 0 0 1px var(--interactive), inset 0 0 0 2px #ffffff;
