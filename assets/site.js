@@ -4,14 +4,24 @@
 
   // ---- Menu mobile ----
   document.addEventListener('click', function (e) {
-    var toggle = e.target.closest('[data-menu-toggle]');
-    if (!toggle) return;
-    var nav = document.querySelector('.cds-header__nav');
-    if (!nav) return;
-    var open = nav.getAttribute('data-open') === 'true';
-    nav.setAttribute('data-open', open ? 'false' : 'true');
-    toggle.setAttribute('aria-expanded', open ? 'false' : 'true');
-    toggle.setAttribute('aria-label', open ? 'Menu' : 'Fermer le menu');
+    var nav    = document.querySelector('.cds-header__nav');
+    var toggle = document.querySelector('[data-menu-toggle]');
+    if (!nav || !toggle) return;
+
+    if (e.target.closest('[data-menu-toggle]')) {
+      var open = nav.getAttribute('data-open') === 'true';
+      nav.setAttribute('data-open', open ? 'false' : 'true');
+      toggle.setAttribute('aria-expanded', open ? 'false' : 'true');
+      toggle.setAttribute('aria-label', open ? 'Menu' : 'Fermer le menu');
+      return;
+    }
+
+    // Fermer si clic en dehors du header
+    if (nav.getAttribute('data-open') === 'true' && !e.target.closest('.cds-header')) {
+      nav.setAttribute('data-open', 'false');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Menu');
+    }
   });
 
   // ---- Marquer le lien actif ----
@@ -124,14 +134,27 @@
     var btnText = btn ? btn.querySelector('.btn-label') : null;
     var ok      = true;
 
+    var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
     form.querySelectorAll('input[required], textarea[required]').forEach(function (f) {
       var errId  = f.getAttribute('aria-describedby');
       var errEl  = errId ? document.getElementById(errId) : null;
-      if (!f.value.trim()) {
+      var val    = f.value.trim();
+      var msg    = '';
+
+      if (!val) {
+        msg = 'Ce champ est obligatoire.';
+      } else if (f.type === 'email' && !emailRe.test(val)) {
+        msg = 'Veuillez saisir une adresse email valide.';
+      } else if (f.minLength > 0 && val.length < f.minLength) {
+        msg = 'Veuillez saisir au moins ' + f.minLength + ' caractères.';
+      }
+
+      if (msg) {
         ok = false;
         f.setAttribute('aria-invalid', 'true');
         f.style.boxShadow = 'inset 0 -2px 0 0 #da1e28';
-        if (errEl) errEl.textContent = 'Ce champ est obligatoire.';
+        if (errEl) errEl.textContent = msg;
       } else {
         f.removeAttribute('aria-invalid');
         f.style.boxShadow = '';

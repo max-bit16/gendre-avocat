@@ -169,31 +169,31 @@
             <div class="form-row">
               <div class="cds-field">
                 <label class="cds-field__label" for="nom">Nom *</label>
-                <input class="cds-input" id="nom" name="nom" type="text" placeholder="Dupont" required aria-required="true" aria-describedby="nom-error" />
+                <input class="cds-input" id="nom" name="nom" type="text" placeholder="Dupont" required aria-required="true" aria-describedby="nom-error" autocomplete="family-name" maxlength="80" />
                 <span class="cds-field-error" id="nom-error" role="alert"></span>
               </div>
               <div class="cds-field">
                 <label class="cds-field__label" for="prenom">Prénom *</label>
-                <input class="cds-input" id="prenom" name="prenom" type="text" placeholder="Marie" required aria-required="true" aria-describedby="prenom-error" />
+                <input class="cds-input" id="prenom" name="prenom" type="text" placeholder="Marie" required aria-required="true" aria-describedby="prenom-error" autocomplete="given-name" maxlength="80" />
                 <span class="cds-field-error" id="prenom-error" role="alert"></span>
               </div>
             </div>
             <div class="cds-field">
               <label class="cds-field__label" for="email">Email *</label>
-              <input class="cds-input" id="email" name="email" type="email" placeholder="marie.dupont@exemple.fr" required aria-required="true" aria-describedby="email-error" />
+              <input class="cds-input" id="email" name="email" type="email" placeholder="marie.dupont@exemple.fr" required aria-required="true" aria-describedby="email-error" autocomplete="email" maxlength="254" />
               <span class="cds-field-error" id="email-error" role="alert"></span>
             </div>
             <div class="cds-field">
               <label class="cds-field__label" for="telephone">Téléphone</label>
-              <input class="cds-input" id="telephone" name="telephone" type="tel" placeholder="06 00 00 00 00" />
+              <input class="cds-input" id="telephone" name="telephone" type="tel" placeholder="06 00 00 00 00" autocomplete="tel" maxlength="20" />
             </div>
             <div class="cds-field">
               <label class="cds-field__label" for="objet">Objet de la demande</label>
-              <input class="cds-input" id="objet" name="objet" type="text" placeholder="Droit immobilier · Droit de la famille…" />
+              <input class="cds-input" id="objet" name="objet" type="text" placeholder="Droit immobilier · Droit de la famille…" autocomplete="off" maxlength="200" />
             </div>
             <div class="cds-field">
               <label class="cds-field__label" for="message">Message *</label>
-              <textarea class="cds-textarea" id="message" name="message" placeholder="Décrivez brièvement votre situation…" required aria-required="true" aria-describedby="message-error"></textarea>
+              <textarea class="cds-textarea" id="message" name="message" placeholder="Décrivez brièvement votre situation…" required aria-required="true" aria-describedby="message-error" autocomplete="off" minlength="10" maxlength="5000"></textarea>
               <span class="cds-field-error" id="message-error" role="alert"></span>
             </div>
             <p style="font-size:12px; color:var(--text-secondary); margin-bottom:var(--sp-06);">Les champs marqués d'un * sont obligatoires. Vos données sont traitées conformément à notre <a href="mentions-legales.html">politique de confidentialité</a>.</p>

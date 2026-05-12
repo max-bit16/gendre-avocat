@@ -154,7 +154,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-primary);
 }
 
-p { margin: 0; line-height: 1.75; }
+p { margin: 0; line-height: 1.75; overflow-wrap: break-word; }
 
 /* Titres serif — affinage éditorial global */
 h1, h2, h3, h4, h5, h6,
@@ -665,6 +665,8 @@ a.cds-tile:hover, button.cds-tile:hover {
   font-size: 16px;
   line-height: 24px;
   color: var(--text-primary);
+  min-width: 0;
+  overflow-wrap: break-word;
 }
 
 /* ---------- Ancres — scroll-margin pour header sticky 64px ---------- */
@@ -756,3 +758,11 @@ a.cds-tile:hover, button.cds-tile:hover {
   .phone-sticky { display: flex; }
   body { padding-bottom: 52px; }
 }
+
+/* ---------- Overflow hardening — grid/flex text children ---------- */
+/* min-width: 0 prevents flex/grid children from overflowing below content-size */
+.actu-article__content,
+.bio__content,
+.bio__portrait-wrap,
+.contact-info,
+.hon-aj__notice { min-width: 0; overflow-wrap: break-word; }
