@@ -11,6 +11,7 @@
     var open = nav.getAttribute('data-open') === 'true';
     nav.setAttribute('data-open', open ? 'false' : 'true');
     toggle.setAttribute('aria-expanded', open ? 'false' : 'true');
+    toggle.setAttribute('aria-label', open ? 'Menu' : 'Fermer le menu');
   });
 
   // ---- Marquer le lien actif ----

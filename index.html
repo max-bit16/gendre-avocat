@@ -163,6 +163,7 @@
     line-height: 1;
   }
   .stat-cell__label { font-size: 13px; color: var(--text-secondary); line-height: 1.4; }
+  .stat-cell__num--text { font-size: 24px; letter-spacing: 0.04em; }
 
   /* ---- CTA ---- */
   .home-cta { padding: var(--sp-12) 0; text-align: center; }
@@ -190,7 +191,7 @@
     <button class="cds-header__menu-toggle" data-menu-toggle aria-label="Menu" aria-expanded="false">
       <svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor"><rect x="4" y="8" width="24" height="2"/><rect x="4" y="15" width="24" height="2"/><rect x="4" y="22" width="24" height="2"/></svg>
     </button>
-    <nav class="cds-header__nav">
+    <nav class="cds-header__nav" aria-label="Navigation principale">
       <a href="index.html" aria-current="page">Accueil</a>
       <a href="presentation.html">Présentation</a>
       <a href="domaines.html">Domaines</a>
@@ -271,15 +272,15 @@
       <div class="home-stats__grid">
         <div class="stat-cell">
           <span class="stat-cell__num">10+</span>
-          <span class="stat-cell__label">Années d'expérience au Barreau de Grenoble</span>
+          <span class="stat-cell__label">Années d'exercice au Barreau de Grenoble</span>
         </div>
         <div class="stat-cell">
-          <span class="stat-cell__num">2</span>
-          <span class="stat-cell__label">Domaines d'expertise principaux</span>
+          <span class="stat-cell__num stat-cell__num--text">TJ · JAF</span>
+          <span class="stat-cell__label">Tribunal judiciaire, Juge aux Affaires Familiales, Cour d'appel</span>
         </div>
         <div class="stat-cell">
           <span class="stat-cell__num">100%</span>
-          <span class="stat-cell__label">Transparence sur les honoraires</span>
+          <span class="stat-cell__label">Convention d'honoraires signée avant toute intervention</span>
         </div>
         <div class="stat-cell">
           <span class="stat-cell__num">AJ</span>

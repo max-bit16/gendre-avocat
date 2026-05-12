@@ -12,10 +12,11 @@
 <meta property="og:description" content="Contactez le Cabinet Céline GENDRE à Grenoble. Formulaire en ligne, téléphone, adresse." />
 <meta property="og:image" content="https://gendre-avocat.fr/assets/images/image-5.webp" />
 <meta name="twitter:card" content="summary_large_image" />
+<link rel="preload" as="image" href="assets/images/image-3.webp" fetchpriority="high" />
 <link rel="stylesheet" href="assets/carbon.css" />
 <style>
   .page-hero { position:relative; background-image:url('assets/images/image-3.webp'); background-size:cover; background-position:center; color:var(--text-on-color); min-height:260px; display:flex; align-items:center; padding:var(--sp-09) 0; }
-  .page-hero::before { content:''; position:absolute; inset:0; background:rgba(22,22,22,0.72); /* overlay — pas de token disponible */ }
+  .page-hero::before { content:''; position:absolute; inset:0; background:var(--overlay-dark); }
   .page-hero > .cds-container { position:relative; z-index:1; }
   @media (max-width:671px){ .page-hero { min-height:180px; } }
   .page-hero__title { font-family:'IBM Plex Serif', Georgia, serif; font-size: clamp(28px, 5vw, 42px); line-height:1.15; font-weight:300; color:var(--text-on-color); margin-bottom:var(--sp-03); }
@@ -112,7 +113,7 @@
     <button class="cds-header__menu-toggle" data-menu-toggle aria-label="Menu" aria-expanded="false">
       <svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor"><rect x="4" y="8" width="24" height="2"/><rect x="4" y="15" width="24" height="2"/><rect x="4" y="22" width="24" height="2"/></svg>
     </button>
-    <nav class="cds-header__nav">
+    <nav class="cds-header__nav" aria-label="Navigation principale">
       <a href="index.html">Accueil</a>
       <a href="presentation.html">Présentation</a>
       <a href="domaines.html">Domaines</a>

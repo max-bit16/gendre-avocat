@@ -28,8 +28,8 @@ body {
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  color: #161616;          /* $text-primary */
-  background-color: #ffffff;
+  color: var(--text-primary);
+  background-color: var(--background);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -100,6 +100,13 @@ a:visited { color: var(--interactive); } /* on garde l'interactif sobre, pas de 
   /* Texte sur fonds sombres */
   --on-dark-mute: #c6c6c6;
   --on-dark-subtle: #8d8d8d;
+
+  /* Overlays */
+  --overlay-dark: rgba(22, 22, 22, 0.72);
+
+  /* Header interaction */
+  --header-hover: var(--header-hover);
+  --btn-secondary-hover: #4c4c4c;
 
   /* Grid */
   --max-w: 1584px;
@@ -231,7 +238,7 @@ h1, h2, h3, h4, h5, h6,
   text-decoration: none;
   white-space: nowrap;
 }
-.cds-header__brand:hover { color: #ffffff; text-decoration: none; background-color: #292929; }
+.cds-header__brand:hover { color: #ffffff; text-decoration: none; background-color: var(--header-hover); }
 .cds-header__brand-mark {
   display: inline-block;
   width: 32px;
@@ -276,7 +283,7 @@ h1, h2, h3, h4, h5, h6,
               border-color 150ms var(--easing-standard);
 }
 .cds-header__nav a:hover {
-  background-color: #292929;
+  background-color: var(--header-hover);
   color: #ffffff;
   text-decoration: none;
   opacity: 1;
@@ -318,10 +325,15 @@ h1, h2, h3, h4, h5, h6,
   color: #ffffff;
   padding: 0;
 }
-.cds-header__menu-toggle:hover { background-color: #292929; }
+.cds-header__menu-toggle:hover { background-color: var(--header-hover); }
 
 @media (max-width: 671px) {
-  .cds-header__action { display: none; }
+  .cds-header__action {
+    padding: 0 var(--sp-03);
+    font-size: 12px;
+    letter-spacing: -0.01em;
+    border-left: none;
+  }
 }
 
 @media (max-width: 1055px) {
@@ -396,7 +408,7 @@ h1, h2, h3, h4, h5, h6,
   color: var(--text-on-color);
   border-color: var(--layer-selected-inverse);
 }
-.cds-btn--secondary:hover { background-color: #4c4c4c; border-color: #4c4c4c; color: var(--text-on-color); }
+.cds-btn--secondary:hover { background-color: var(--btn-secondary-hover); border-color: var(--btn-secondary-hover); color: var(--text-on-color); }
 
 /* Tertiary */
 .cds-btn--tertiary {
@@ -537,7 +549,7 @@ a.cds-tile:hover, button.cds-tile:hover {
 
 /* ---------- Footer ---------- */
 .cds-footer {
-  background-color: #161616;
+  background-color: var(--header-bg);
   color: #c6c6c6;
   padding: var(--sp-11) 0 var(--sp-07);
   margin-top: var(--sp-12);
