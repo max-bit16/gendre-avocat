@@ -25,39 +25,56 @@
   /* ---- Liste articles ---- */
   .actu-section { padding: var(--sp-12) 0; }
 
+  /* ---- Liste éditoriale (remplace le 3-col card grid) ---- */
   .actu-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--sp-05);
-  }
-  @media (min-width: 672px) { .actu-grid { grid-template-columns: 1fr 1fr; } }
-  @media (min-width: 1056px) { .actu-grid { grid-template-columns: repeat(3, 1fr); } }
-
-  .actu-card {
-    background: var(--layer-01);
-    border: 1px solid var(--border-subtle);
     display: flex;
     flex-direction: column;
-    text-decoration: none;
-    color: var(--text-primary);
-    transition: background-color 110ms cubic-bezier(0.2,0,.38,.9);
-    position: relative;
-  }
-  .actu-card:hover { background: var(--layer-hover-01); color: var(--text-primary); text-decoration: none; }
-  .actu-card__link::after {
-    content: '';
-    position: absolute;
-    inset: 0;
   }
 
-  .actu-card__img {
+  .actu-article {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: var(--sp-07);
+    padding: var(--sp-07) 0;
+    border-top: 1px solid var(--border-subtle);
+    color: var(--text-primary);
+    position: relative;
+    transition: background-color 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .actu-article:last-child { border-bottom: 1px solid var(--border-subtle); }
+  .actu-article:hover { background: var(--layer-01); color: var(--text-primary); }
+  @media (max-width: 671px) {
+    .actu-article { grid-template-columns: 1fr; gap: var(--sp-05); }
+  }
+
+  /* accent line gauche */
+  .actu-article::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 0;
+    background: var(--interactive);
+    transition: width 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+  }
+  .actu-article:hover::before { width: 2px; }
+
+  .actu-article__thumb {
     width: 100%;
-    aspect-ratio: 16/9;
+    aspect-ratio: 4/3;
     object-fit: cover;
     display: block;
   }
-  .actu-card__body { padding: var(--sp-07); display: flex; flex-direction: column; flex: 1; gap: var(--sp-04); }
-  .actu-card__meta {
+  @media (max-width: 671px) { .actu-article__thumb { aspect-ratio: 16/9; } }
+
+  .actu-article__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-04);
+    padding: var(--sp-02) 0;
+  }
+
+  .actu-article__meta {
     display: flex;
     align-items: center;
     gap: var(--sp-05);
@@ -65,7 +82,7 @@
     color: var(--text-secondary);
     letter-spacing: 0.32px;
   }
-  .actu-card__tag {
+  .actu-article__tag {
     display: inline-block;
     padding: 2px var(--sp-03);
     background: var(--layer-selected-01);
@@ -74,29 +91,37 @@
     color: var(--text-secondary);
     font-weight: 500;
   }
-  .actu-card__title {
+  .actu-article__title {
     font-family: 'IBM Plex Serif', Georgia, serif;
-    font-size: 20px;
+    font-size: clamp(18px, 2vw, 24px);
     font-weight: 300;
     line-height: 1.3;
     color: var(--text-primary);
   }
-  .actu-card__excerpt {
+  .actu-article__excerpt {
     font-size: 14px;
-    line-height: 22px;
+    line-height: 1.7;
     color: var(--text-secondary);
     flex: 1;
+    max-width: 60ch;
   }
-  .actu-card__link {
+  .actu-article__cta {
     display: inline-flex;
     align-items: center;
     gap: var(--sp-03);
     font-size: 14px;
     color: var(--interactive);
     margin-top: auto;
+    position: relative;
   }
-  .actu-card__link svg { transition: transform 110ms cubic-bezier(0.2,0,.38,.9); }
-  .actu-card:hover .actu-card__link svg { transform: translateX(4px); }
+  /* stretched link — toute la ligne est cliquable */
+  .actu-article__cta::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+  .actu-article__cta svg { transition: transform 110ms var(--easing-standard); }
+  .actu-article:hover .actu-article__cta svg { transform: translateX(4px); }
 
   /* ---- Article vedette ---- */
   .actu-featured {
@@ -192,50 +217,50 @@
         </div>
       </article>
 
-      <!-- Grille articles -->
+      <!-- Liste éditoriale -->
       <div class="actu-grid">
-        <article class="actu-card">
-          <img class="actu-card__img" src="assets/images/image-1.webp" alt="Divorce par consentement mutuel" width="480" height="270" loading="lazy" />
-          <div class="actu-card__body">
-            <div class="actu-card__meta">
-              <span class="actu-card__tag">Droit de la famille</span>
+        <article class="actu-article">
+          <img class="actu-article__thumb" src="assets/images/image-1.webp" alt="Divorce par consentement mutuel" width="480" height="360" loading="lazy" />
+          <div class="actu-article__content">
+            <div class="actu-article__meta">
+              <span class="actu-article__tag">Droit de la famille</span>
               <span>Novembre 2025</span>
             </div>
-            <h3 class="actu-card__title">Divorce sans juge : bilan de 8 ans de pratique</h3>
-            <p class="actu-card__excerpt">Depuis le 1er janvier 2017, le divorce par consentement mutuel ne nécessite plus l'intervention d'un juge. Retour sur les avantages, les limites et les cas où le recours au juge reste indispensable.</p>
-            <a class="actu-card__link" href="contact.html">
+            <h3 class="actu-article__title">Divorce sans juge : bilan de 8 ans de pratique</h3>
+            <p class="actu-article__excerpt">Depuis le 1er janvier 2017, le divorce par consentement mutuel ne nécessite plus l'intervention d'un juge. Retour sur les avantages, les limites et les cas où le recours au juge reste indispensable.</p>
+            <a class="actu-article__cta" href="contact.html">
               Poser une question
               <svg width="16" height="16" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
             </a>
           </div>
         </article>
 
-        <article class="actu-card">
-          <img class="actu-card__img" src="assets/images/image-2.webp" alt="Loyers impayés et expulsion" width="480" height="270" loading="lazy" />
-          <div class="actu-card__body">
-            <div class="actu-card__meta">
-              <span class="actu-card__tag">Droit immobilier</span>
+        <article class="actu-article">
+          <img class="actu-article__thumb" src="assets/images/image-2.webp" alt="Loyers impayés et expulsion" width="480" height="360" loading="lazy" />
+          <div class="actu-article__content">
+            <div class="actu-article__meta">
+              <span class="actu-article__tag">Droit immobilier</span>
               <span>Octobre 2025</span>
             </div>
-            <h3 class="actu-card__title">Loyers impayés : quelle procédure pour le bailleur ?</h3>
-            <p class="actu-card__excerpt">Face aux impayés, la procédure d'expulsion suit des étapes précises. Commandement de payer, saisine du juge, trêve hivernale — un guide pratique pour les propriétaires bailleurs.</p>
-            <a class="actu-card__link" href="contact.html">
+            <h3 class="actu-article__title">Loyers impayés : quelle procédure pour le bailleur ?</h3>
+            <p class="actu-article__excerpt">Face aux impayés, la procédure d'expulsion suit des étapes précises. Commandement de payer, saisine du juge, trêve hivernale — un guide pratique pour les propriétaires bailleurs.</p>
+            <a class="actu-article__cta" href="contact.html">
               Poser une question
               <svg width="16" height="16" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
             </a>
           </div>
         </article>
 
-        <article class="actu-card">
-          <img class="actu-card__img" src="assets/images/image-7.webp" alt="Aide juridictionnelle" width="480" height="270" loading="lazy" />
-          <div class="actu-card__body">
-            <div class="actu-card__meta">
-              <span class="actu-card__tag">Honoraires</span>
+        <article class="actu-article">
+          <img class="actu-article__thumb" src="assets/images/image-7.webp" alt="Aide juridictionnelle" width="480" height="360" loading="lazy" />
+          <div class="actu-article__content">
+            <div class="actu-article__meta">
+              <span class="actu-article__tag">Honoraires</span>
               <span>Septembre 2025</span>
             </div>
-            <h3 class="actu-card__title">Aide juridictionnelle : conditions et démarches en 2025</h3>
-            <p class="actu-card__excerpt">Les plafonds de ressources de l'AJ ont été revalorisés en 2025. Qui peut en bénéficier, comment constituer le dossier et quelles sont les démarches à suivre auprès du tribunal.</p>
-            <a class="actu-card__link" href="contact.html">
+            <h3 class="actu-article__title">Aide juridictionnelle : conditions et démarches en 2025</h3>
+            <p class="actu-article__excerpt">Les plafonds de ressources de l'AJ ont été revalorisés en 2025. Qui peut en bénéficier, comment constituer le dossier et quelles sont les démarches à suivre auprès du tribunal.</p>
+            <a class="actu-article__cta" href="contact.html">
               Poser une question
               <svg width="16" height="16" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
             </a>
