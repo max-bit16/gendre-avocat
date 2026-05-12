@@ -188,6 +188,18 @@
   .stat-cell__label { font-size: 13px; color: var(--text-secondary); line-height: 1.4; }
   .stat-cell__num--text { font-size: 24px; letter-spacing: 0.04em; }
 
+  /* ---- Mobile overrides ---- */
+  @media (max-width: 671px) {
+    .hero__call { display: none; } /* sticky bar covers mobile phone */
+    .home-domains { padding: var(--sp-09) 0; }
+    .domain-card { padding: var(--sp-07); }
+    .home-approche { padding: var(--sp-09) 0; }
+    .home-approche__img { aspect-ratio: 16/9; }
+    .home-stats { padding: var(--sp-09) 0; }
+    .stat-cell { padding: var(--sp-07) var(--sp-05); }
+    .home-cta { padding: var(--sp-09) 0; }
+  }
+
   /* ---- CTA ---- */
   .home-cta {
     padding: var(--sp-12) 0;

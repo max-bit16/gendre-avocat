@@ -327,12 +327,8 @@ h1, h2, h3, h4, h5, h6,
 .cds-header__menu-toggle:hover { background-color: var(--header-hover); }
 
 @media (max-width: 671px) {
-  .cds-header__action {
-    padding: 0 var(--sp-03);
-    font-size: 12px;
-    letter-spacing: -0.01em;
-    border-left: none;
-  }
+  /* Sticky bar remplace le bouton téléphone dans le header */
+  .cds-header__action { display: none; }
 }
 
 @media (max-width: 1055px) {
@@ -584,7 +580,7 @@ a.cds-tile:hover, button.cds-tile:hover {
   color: var(--on-dark-mute);
 }
 .cds-footer__col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0; }
-.cds-footer__col li a { display: inline-block; padding: var(--sp-02) 0; line-height: 22px; }
+.cds-footer__col li a { display: flex; align-items: center; min-height: 44px; line-height: 22px; }
 
 .cds-footer__brand-name {
   color: #ffffff;
@@ -730,6 +726,11 @@ a.cds-tile:hover, button.cds-tile:hover {
     animation-timeline: scroll(root);
     animation-range: 0 55vh;
   }
+}
+
+/* Footer mobile */
+@media (max-width: 671px) {
+  .cds-footer { padding-top: var(--sp-09); margin-top: var(--sp-09); }
 }
 
 /* ---------- Sticky phone bar — mobile uniquement ---------- */
