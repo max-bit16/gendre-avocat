@@ -12,15 +12,29 @@
 <meta property="og:description" content="Céline GENDRE, avocate inscrite au Barreau de Grenoble depuis plus de 10 ans, spécialisée en droit immobilier et droit de la famille." />
 <meta property="og:image" content="https://gendre-avocat.fr/assets/images/image-5.webp" />
 <meta name="twitter:card" content="summary_large_image" />
-<link rel="preload" as="image" href="assets/images/image-6.webp" fetchpriority="high" />
 <link rel="stylesheet" href="assets/carbon.css" />
 <style>
-  .page-hero { position:relative; background-image:url('assets/images/image-6.webp'); background-size:cover; background-position:center; color:var(--text-on-color); min-height:320px; display:flex; align-items:center; padding:var(--sp-09) 0; }
-  .page-hero::before { content:''; position:absolute; inset:0; background:var(--overlay-dark); }
-  .page-hero > .cds-container { position:relative; z-index:1; }
-  @media (max-width:671px){ .page-hero { min-height:200px; } }
-  .page-hero__title { font-family:'IBM Plex Serif', Georgia, serif; font-size: clamp(28px, 5vw, 42px); line-height:1.15; font-weight:300; color:var(--text-on-color); margin-bottom:var(--sp-03); }
-  .page-hero__subtitle { font-size:16px; color:var(--text-placeholder); }
+  /* ---- Typographic header (remplace le photo hero) ---- */
+  .pres-header {
+    padding: var(--sp-12) 0 var(--sp-09);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  @media (max-width: 671px) { .pres-header { padding: var(--sp-09) 0 var(--sp-07); } }
+  .pres-header__title {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: clamp(32px, 5.5vw, 56px);
+    font-weight: 300;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    color: var(--text-primary);
+    margin-bottom: var(--sp-04);
+  }
+  .pres-header__sub {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--text-secondary);
+    letter-spacing: 0.04em;
+  }
 
   /* ---- Bio ---- */
   .bio { padding: var(--sp-12) 0; }
@@ -152,10 +166,10 @@
 
 <main id="main-content">
 
-  <section class="page-hero">
+  <section class="pres-header">
     <div class="cds-container">
-      <h1 class="page-hero__title">Présentation du cabinet</h1>
-      <p class="page-hero__subtitle">Céline GENDRE · Avocate au Barreau de Grenoble</p>
+      <h1 class="pres-header__title">Présentation du cabinet</h1>
+      <p class="pres-header__sub">Céline GENDRE · Avocate au Barreau de Grenoble</p>
     </div>
   </section>
 

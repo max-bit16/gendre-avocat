@@ -300,15 +300,14 @@ h1, h2, h3, h4, h5, h6,
   align-items: center;
   padding: 0 var(--sp-05);
   height: 64px;
-  background-color: transparent;
+  background-color: var(--interactive);
   color: #ffffff;
   font-size: 14px;
   border: none;
-  border-left: 1px solid var(--header-border);
   text-decoration: none;
 }
 .cds-header__action:hover {
-  background-color: var(--interactive);
+  background-color: var(--interactive-hover);
   color: #ffffff;
   text-decoration: none;
 }
@@ -710,6 +709,10 @@ a.cds-tile:hover, button.cds-tile:hover {
 .hero__actions       { animation: hero-in 560ms 250ms var(--easing-entrance) both; }
 .page-hero__title    { animation: hero-in 560ms 60ms  var(--easing-entrance) both; }
 .page-hero__subtitle { animation: hero-in 540ms 140ms var(--easing-entrance) both; }
+.pres-header__title  { animation: hero-in 560ms 60ms  var(--easing-entrance) both; }
+.pres-header__sub    { animation: hero-in 540ms 140ms var(--easing-entrance) both; }
+.contact-hero__title { animation: hero-in 560ms 60ms  var(--easing-entrance) both; }
+.contact-hero__sub   { animation: hero-in 540ms 140ms var(--easing-entrance) both; }
 
 .js-reveal {
   opacity: 0;
@@ -727,4 +730,28 @@ a.cds-tile:hover, button.cds-tile:hover {
     animation-timeline: scroll(root);
     animation-range: 0 55vh;
   }
+}
+
+/* ---------- Sticky phone bar — mobile uniquement ---------- */
+.phone-sticky {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-04);
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: 52px;
+  background: var(--interactive);
+  color: var(--text-on-color);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  z-index: 100;
+}
+.phone-sticky:hover, .phone-sticky:visited { color: var(--text-on-color); text-decoration: none; }
+.phone-sticky:active { background: var(--interactive-active); }
+@media (max-width: 671px) {
+  .phone-sticky { display: flex; }
+  body { padding-bottom: 52px; }
 }

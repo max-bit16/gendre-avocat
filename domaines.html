@@ -101,7 +101,7 @@
     font-family: 'IBM Plex Mono', monospace;
     font-size: 13px;
     color: var(--text-placeholder);
-    letter-spacing: 0.06em;
+    letter-spacing: 0.04em;
   }
 
   /* ---- Intro ---- */
@@ -175,12 +175,14 @@
     content: '';
     position: absolute;
     left: 0; top: 0; bottom: 0;
-    width: 0;
+    width: 2px;
     background: var(--interactive);
-    transition: width var(--dur-fast-02) var(--easing-standard);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform var(--dur-fast-02) var(--easing-standard);
     pointer-events: none;
   }
-  .dom-tile:hover::after { width: 2px; }
+  .dom-tile:hover::after { transform: scaleX(1); }
   @media (max-width: 671px) {
     .dom-tile { padding: var(--sp-06); min-height: 160px; }
   }

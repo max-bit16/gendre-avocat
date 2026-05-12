@@ -63,6 +63,15 @@
     line-height: 1.6;
   }
   .hero__actions { display: flex; flex-wrap: wrap; gap: var(--sp-04); }
+  .hero__call {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--text-placeholder);
+    margin-top: var(--sp-05);
+  }
+  .hero__call a { color: var(--text-on-color); text-decoration: underline; text-underline-offset: 3px; }
+  .hero__call a:hover { color: var(--text-on-color); }
 
   /* ---- Section Domaines ---- */
   .home-domains { padding: var(--sp-12) 0; }
@@ -92,13 +101,15 @@
     content: '';
     position: absolute;
     left: 0; top: 0; bottom: 0;
-    width: 0;
+    width: 2px;
     background: var(--interactive);
-    transition: width 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1);
     pointer-events: none;
   }
   .domain-card:hover { background: var(--layer-hover-01); color: var(--text-primary); text-decoration: none; }
-  .domain-card:hover::after { width: 2px; }
+  .domain-card:hover::after { transform: scaleX(1); }
   .domain-card__num { font-size: 12px; letter-spacing: 0.32px; color: var(--text-secondary); }
   .domain-card__title {
     font-family: 'IBM Plex Serif', Georgia, serif;
@@ -244,6 +255,7 @@
           <svg class="cds-btn__icon" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
         </a>
       </div>
+      <p class="hero__call">ou appelez directement le <a href="tel:+33986388353">09 86 38 83 53</a></p>
     </div>
   </section>
 
@@ -302,7 +314,7 @@
           <span class="stat-cell__label">Tribunal judiciaire, Juge aux Affaires Familiales, Cour d'appel</span>
         </div>
         <div class="stat-cell">
-          <span class="stat-cell__num">100%</span>
+          <span class="stat-cell__num" data-no-counter>100%</span>
           <span class="stat-cell__label">Convention d'honoraires signée avant toute intervention</span>
         </div>
         <div class="stat-cell">

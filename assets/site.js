@@ -65,11 +65,21 @@
     document.querySelectorAll('.js-reveal').forEach(function (el) { io.observe(el); });
   }
 
+  // ---- Barre téléphone sticky (mobile) ----
+  function initStickyPhone() {
+    var bar = document.createElement('a');
+    bar.href = 'tel:+33986388353';
+    bar.className = 'phone-sticky';
+    bar.textContent = 'Appeler le cabinet — 09 86 38 83 53';
+    document.body.appendChild(bar);
+  }
+
   // ---- Compteurs animés (chiffres clés) ----
   function initCounters() {
     if (!('IntersectionObserver' in window)) return;
 
     document.querySelectorAll('.stat-cell__num').forEach(function (el) {
+      if (el.hasAttribute('data-no-counter')) return;
       var m = el.textContent.trim().match(/^(\d+)(.*)$/);
       if (!m) return;
       el.dataset.target = m[1];
@@ -173,5 +183,6 @@
     markActiveNav();
     initReveal();
     initCounters();
+    initStickyPhone();
   });
 })();
