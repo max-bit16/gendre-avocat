@@ -2,25 +2,27 @@
 (function () {
   'use strict';
 
+  // Cache DOM refs (script runs after </body> content, DOM is ready)
+  var _nav    = document.querySelector('.cds-header__nav');
+  var _toggle = document.querySelector('[data-menu-toggle]');
+
   // ---- Menu mobile ----
   document.addEventListener('click', function (e) {
-    var nav    = document.querySelector('.cds-header__nav');
-    var toggle = document.querySelector('[data-menu-toggle]');
-    if (!nav || !toggle) return;
+    if (!_nav || !_toggle) return;
 
     if (e.target.closest('[data-menu-toggle]')) {
-      var open = nav.getAttribute('data-open') === 'true';
-      nav.setAttribute('data-open', open ? 'false' : 'true');
-      toggle.setAttribute('aria-expanded', open ? 'false' : 'true');
-      toggle.setAttribute('aria-label', open ? 'Menu' : 'Fermer le menu');
+      var open = _nav.getAttribute('data-open') === 'true';
+      _nav.setAttribute('data-open', open ? 'false' : 'true');
+      _toggle.setAttribute('aria-expanded', open ? 'false' : 'true');
+      _toggle.setAttribute('aria-label', open ? 'Menu' : 'Fermer le menu');
       return;
     }
 
     // Fermer si clic en dehors du header
-    if (nav.getAttribute('data-open') === 'true' && !e.target.closest('.cds-header')) {
-      nav.setAttribute('data-open', 'false');
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.setAttribute('aria-label', 'Menu');
+    if (_nav.getAttribute('data-open') === 'true' && !e.target.closest('.cds-header')) {
+      _nav.setAttribute('data-open', 'false');
+      _toggle.setAttribute('aria-expanded', 'false');
+      _toggle.setAttribute('aria-label', 'Menu');
     }
   });
 
@@ -124,6 +126,11 @@
   // Obtenez votre cle gratuite sur https://web3forms.com
   var W3F_KEY = 'VOTRE_CLE_WEB3FORMS';
 
+  // Read error/success colors from CSS tokens once (keeps JS in sync with design system)
+  var _rootStyle   = getComputedStyle(document.documentElement);
+  var _colorError  = _rootStyle.getPropertyValue('--support-error').trim()   || '#da1e28';
+  var _colorOk     = _rootStyle.getPropertyValue('--support-success').trim() || '#24a148';
+
   document.addEventListener('submit', function (e) {
     var form = e.target.closest('form[data-cds-form]');
     if (!form) return;
@@ -153,7 +160,7 @@
       if (msg) {
         ok = false;
         f.setAttribute('aria-invalid', 'true');
-        f.style.boxShadow = 'inset 0 -2px 0 0 #da1e28';
+        f.style.boxShadow = 'inset 0 -2px 0 0 ' + _colorError;
         if (errEl) errEl.textContent = msg;
       } else {
         f.removeAttribute('aria-invalid');
@@ -165,7 +172,7 @@
     if (!ok) {
       if (status) {
         status.textContent = 'Veuillez compl\xe9ter les champs obligatoires.';
-        status.style.color = '#da1e28';
+        status.style.color = _colorError;
       }
       return;
     }
@@ -182,18 +189,18 @@
         if (status) {
           if (d.success) {
             status.textContent = 'Message envoy\xe9. Nous vous r\xe9pondrons dans les meilleurs d\xe9lais.';
-            status.style.color = '#24a148';
+            status.style.color = _colorOk;
             form.reset();
           } else {
             status.textContent = "Erreur lors de l’envoi. Veuillez r\xe9essayer.";
-            status.style.color = '#da1e28';
+            status.style.color = _colorError;
           }
         }
       })
       .catch(function () {
         if (status) {
           status.textContent = 'Erreur r\xe9seau. V\xe9rifiez votre connexion.';
-          status.style.color = '#da1e28';
+          status.style.color = _colorError;
         }
       })
       .finally(function () {

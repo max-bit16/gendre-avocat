@@ -105,7 +105,7 @@ a:visited { color: var(--interactive); } /* on garde l'interactif sobre, pas de 
   --overlay-dark: rgba(22, 22, 22, 0.72);
 
   /* Header interaction */
-  --header-hover: var(--header-hover);
+  --header-hover: rgba(255, 255, 255, 0.08);
   --btn-secondary-hover: #4c4c4c;
 
   /* Grid */

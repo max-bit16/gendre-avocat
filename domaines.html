@@ -15,13 +15,7 @@
 <link rel="preload" as="image" href="assets/images/image-5.webp" fetchpriority="high" />
 <link rel="stylesheet" href="assets/carbon.css" />
 <style>
-  /* ============================================================
-     DOMAINES.HTML — styles de page
-     Élévation design : taste · typeset · adapt · polish
-     ============================================================ */
-
   /* ---- Hero ---- */
-  /* [gpt-taste] cinématique : plus haut, aligné bas, H1 éditorial */
   .page-hero {
     position: relative;
     background-image: url('assets/images/image-5.webp');
@@ -47,7 +41,6 @@
   }
   .page-hero > .cds-container { position: relative; z-index: 1; }
 
-  /* [adapt] mobile : hero raccourci, texte recentré */
   @media (max-width: 671px) {
     .page-hero {
       min-height: 300px;
@@ -56,7 +49,6 @@
     }
   }
 
-  /* [gpt-taste + typeset] eyebrow monospaced avec règle bleue */
   .page-hero__eyebrow {
     display: flex;
     align-items: center;
@@ -78,7 +70,6 @@
     flex-shrink: 0;
   }
 
-  /* [typeset] H1 : fluid, serré, grande taille éditoriale */
   .page-hero__title {
     font-family: 'IBM Plex Serif', Georgia, serif;
     font-size: clamp(32px, 5.5vw, 56px);
@@ -96,7 +87,6 @@
     }
   }
 
-  /* [polish] subtitle : mono petit pour contraste avec le serif */
   .page-hero__subtitle {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 13px;
@@ -105,11 +95,8 @@
   }
 
   /* ---- Intro ---- */
-  /* [gpt-taste] section symétrique (plus de padding asymétrique) */
   .dom-intro { padding: var(--sp-12) 0; }
   @media (max-width: 671px) { .dom-intro { padding: var(--sp-09) 0; } }
-
-  .dom-intro__grid { display: block; }
 
   .dom-intro__lead {
     font-family: 'IBM Plex Serif', Georgia, serif;
@@ -122,18 +109,14 @@
     padding-left: var(--sp-07);
     border-left: 2px solid var(--interactive);
   }
-  .dom-intro__img { display: none; }
-
   /* ---- Sections domaines ---- */
   .dom-section { padding: var(--sp-12) 0; }
-  /* [adapt] padding réduit sur mobile */
   @media (max-width: 671px) { .dom-section { padding: var(--sp-09) 0; } }
 
   .dom-section--alt { background: var(--layer-01); }
 
   .dom-section__head { margin-bottom: var(--sp-09); max-width: 720px; }
 
-  /* [typeset] titre section : fluid + letter-spacing éditorial */
   .dom-section__title {
     font-family: 'IBM Plex Serif', Georgia, serif;
     font-size: clamp(24px, 3.5vw, 36px);
@@ -158,7 +141,6 @@
   }
 
   /* ---- Tiles ---- */
-  /* [polish] hover, [typeset] body 15px, [adapt] mobile padding */
   .dom-tile {
     background: var(--layer-02);
     padding: var(--sp-07);
@@ -190,7 +172,6 @@
   .dom-section--alt .dom-tile { background: var(--layer-01); }
   .dom-section--alt .dom-tile:hover { background: var(--layer-hover-01); }
 
-  /* [typeset + polish] numéro monospaced — plus précis/technique */
   .dom-tile__num {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 11px;
@@ -198,7 +179,6 @@
     color: var(--text-secondary);
   }
 
-  /* [typeset] titre tile : letter-spacing éditorial */
   .dom-tile__title {
     font-family: 'IBM Plex Serif', Georgia, serif;
     font-size: 22px;
@@ -208,7 +188,6 @@
     color: var(--text-primary);
   }
 
-  /* [typeset] body : 15px/1.65 — plus confortable */
   .dom-tile__text {
     font-size: 15px;
     line-height: 1.65;
@@ -216,7 +195,6 @@
   }
 
   /* ---- Tile vedette ---- */
-  /* [gpt-taste] brise la monotonie de la grille uniforme */
   @media (min-width: 672px) {
     .dom-tile--featured {
       grid-column: span 2;
@@ -230,7 +208,6 @@
   }
 
   /* ---- CTA ---- */
-  /* [gpt-taste] layout 2 cols : texte à gauche, bouton à droite — plus éditorial */
   .dom-cta {
     padding: var(--sp-12) 0;
     background: var(--header-bg);
@@ -251,7 +228,6 @@
     }
   }
 
-  /* [typeset] titre CTA : fluid + tenu éditorial */
   .dom-cta__title {
     font-family: 'IBM Plex Serif', Georgia, serif;
     font-size: clamp(22px, 3.5vw, 36px);
@@ -262,8 +238,6 @@
     max-width: 520px;
   }
 
-  /* ---- Ancres : scroll-margin pour header sticky 64px ---- */
-  /* [polish] évite que le header masque le titre de section */
   #immobilier,
   #famille {
     scroll-margin-top: 80px;
@@ -312,12 +286,9 @@
     </div>
   </section>
 
-  <section class="dom-intro">
+  <section class="dom-intro" aria-label="Introduction">
     <div class="cds-container">
-      <div class="dom-intro__grid">
-        <p class="dom-intro__lead">Le cabinet intervient principalement en droit immobilier et en droit de la famille, devant l'ensemble des juridictions, pour les particuliers comme pour les entreprises.</p>
-        <img class="dom-intro__img" src="assets/images/image-7.webp" alt="Marteau de juge" width="280" height="280" loading="lazy" />
-      </div>
+      <p class="dom-intro__lead">Le cabinet intervient principalement en droit immobilier et en droit de la famille, devant l'ensemble des juridictions, pour les particuliers comme pour les entreprises.</p>
     </div>
   </section>
 
