@@ -134,7 +134,7 @@
     color: var(--interactive);
     margin-top: auto;
   }
-  .domain-card__link svg { transition: transform 110ms cubic-bezier(0.2,0,.38,.9); }
+  .domain-card__link svg { transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1); }
   .domain-card:hover .domain-card__link svg { transform: translateX(4px); }
 
   /* ---- Section Approche ---- */
@@ -270,7 +270,7 @@
       <span>Céline GENDRE&nbsp;<span style="color:var(--on-dark-subtle);">Avocat</span></span>
     </a>
     <button class="cds-header__menu-toggle" data-menu-toggle aria-label="Menu" aria-expanded="false">
-      <svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor"><rect x="4" y="8" width="24" height="2"/><rect x="4" y="15" width="24" height="2"/><rect x="4" y="22" width="24" height="2"/></svg>
+      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 32 32" fill="currentColor"><rect x="4" y="8" width="24" height="2"/><rect x="4" y="15" width="24" height="2"/><rect x="4" y="22" width="24" height="2"/></svg>
     </button>
     <nav class="cds-header__nav" aria-label="Navigation principale">
       <a href="index.html" aria-current="page">Accueil</a>
@@ -295,11 +295,11 @@
       <div class="hero__actions">
         <a class="cds-btn cds-btn--primary" href="contact.html">
           Prendre rendez-vous
-          <svg class="cds-btn__icon" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
+          <svg aria-hidden="true" class="cds-btn__icon" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
         </a>
         <a class="cds-btn cds-btn--secondary" href="domaines.html">
           Nos domaines
-          <svg class="cds-btn__icon" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
+          <svg aria-hidden="true" class="cds-btn__icon" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
         </a>
       </div>
       <p class="hero__call">ou appelez directement le <a href="tel:+33986388353">09 86 38 83 53</a></p>
@@ -316,7 +316,7 @@
           <p class="domain-card__body">Construction, baux d'habitation et commerciaux, droit de propriété, copropriété. Assistance des particuliers et professionnels en litige ou en conseil.</p>
           <span class="domain-card__link">
             Explorer
-            <svg width="16" height="16" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
           </span>
         </a>
         <a class="domain-card" href="domaines.html#famille">
@@ -325,7 +325,7 @@
           <p class="domain-card__body">Divorce, séparation, autorité parentale, violences conjugales, assistance éducative et représentation des enfants.</p>
           <span class="domain-card__link">
             Explorer
-            <svg width="16" height="16" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
           </span>
         </a>
       </div>
@@ -341,7 +341,7 @@
           <p class="home-approche__body">Chaque dossier est unique. Le cabinet vous accompagne de façon personnalisée, de la première consultation à la résolution de votre affaire, avec transparence sur les honoraires et les stratégies envisageables.</p>
           <a class="cds-btn cds-btn--primary" href="presentation.html">
             Le cabinet
-            <svg class="cds-btn__icon" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
+            <svg aria-hidden="true" class="cds-btn__icon" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
           </a>
         </div>
         <img class="home-approche__img" src="assets/images/image-7.webp" alt="Consultation au cabinet d'avocat" width="640" height="480" loading="lazy" />
@@ -353,11 +353,11 @@
     <div class="cds-container">
       <div class="home-stats__grid">
         <div class="stat-cell">
-          <span class="stat-cell__num">10+</span>
+          <span class="stat-cell__num" aria-live="polite">10+</span>
           <span class="stat-cell__label">Années d'exercice au Barreau de Grenoble</span>
         </div>
         <div class="stat-cell">
-          <span class="stat-cell__num stat-cell__num--text">TJ · JAF</span>
+          <span class="stat-cell__num stat-cell__num--text" aria-live="polite">TJ · JAF</span>
           <span class="stat-cell__label">Tribunal judiciaire, Juge aux Affaires Familiales, Cour d'appel</span>
         </div>
         <div class="stat-cell">
@@ -365,7 +365,7 @@
           <span class="stat-cell__label">Convention d'honoraires signée avant toute intervention</span>
         </div>
         <div class="stat-cell">
-          <span class="stat-cell__num">AJ</span>
+          <span class="stat-cell__num" aria-live="polite">AJ</span>
           <span class="stat-cell__label">Aide juridictionnelle acceptée</span>
         </div>
       </div>
@@ -378,7 +378,7 @@
         <h2 class="home-cta__title">Une situation à analyser ? Prenez contact.</h2>
         <a class="cds-btn cds-btn--primary" href="contact.html">
           Nous contacter
-          <svg class="cds-btn__icon" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
+          <svg aria-hidden="true" class="cds-btn__icon" viewBox="0 0 32 32" fill="currentColor"><path d="M18 6l-1.43 1.39L24.15 15H4v2h20.15l-7.58 7.61L18 26l10-10z"/></svg>
         </a>
       </div>
     </div>
