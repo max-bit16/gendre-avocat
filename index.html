@@ -47,7 +47,7 @@
   }
   .hero__eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--interactive); }
   .hero__title {
-    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: clamp(36px, 6vw, 64px);
     font-weight: 300;
     line-height: 1.1;
@@ -120,7 +120,7 @@
   .domain-card:hover::after { transform: scaleX(1); }
   .domain-card__num { font-size: 12px; letter-spacing: 0.32px; color: var(--text-secondary); }
   .domain-card__title {
-    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: 28px;
     font-weight: 300;
     line-height: 1.2;
@@ -153,7 +153,7 @@
     .home-approche__grid { grid-template-columns: 1fr 1fr; }
   }
   .home-approche__title {
-    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: clamp(28px, 4vw, 42px);
     font-weight: 300;
     line-height: 1.2;
@@ -169,7 +169,21 @@
   }
 
   /* ---- Chiffres ---- */
-  .home-stats { padding: var(--sp-12) 0; background: var(--layer-01); }
+  .home-stats {
+    padding: var(--sp-12) 0;
+    background: var(--layer-01);
+    position: relative;
+  }
+  .home-stats::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(0, 67, 206, 0.10) 1.5px, transparent 1.5px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .home-stats .cds-grid { position: relative; z-index: 1; }
   .home-stats__grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -187,7 +201,7 @@
     gap: var(--sp-03);
   }
   .stat-cell__num {
-    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: 42px;
     font-weight: 300;
     color: var(--text-primary);
@@ -213,6 +227,19 @@
     padding: var(--sp-12) 0;
     background: var(--header-bg);
     color: var(--text-on-color);
+    position: relative;
+    overflow: hidden;
+  }
+  .home-cta::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    width: 200px;
+    height: 200px;
+    border-left: 1px solid rgba(255, 255, 255, 0.07);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    pointer-events: none;
   }
   .home-cta__inner {
     display: grid;
@@ -224,7 +251,7 @@
     .home-cta__inner { grid-template-columns: 1fr auto; }
   }
   .home-cta__title {
-    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: clamp(22px, 3vw, 34px);
     font-weight: 300;
     color: var(--text-on-color);
