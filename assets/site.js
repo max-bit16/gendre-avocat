@@ -84,6 +84,12 @@
     bar.className = 'phone-sticky';
     bar.textContent = 'Appeler le cabinet — 09 86 38 83 53';
     document.body.appendChild(bar);
+    // Slide up after page settles — double rAF forces a reflow between paint and class add
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        setTimeout(function () { bar.classList.add('is-visible'); }, 280);
+      });
+    });
   }
 
   // ---- Compteurs animés (chiffres clés) ----
